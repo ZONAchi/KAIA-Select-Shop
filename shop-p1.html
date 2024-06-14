@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KAIA Select Shop</title>
+    <link rel="icon" href="./img/253822 - 複製.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<style>
+    a {
+        text-decoration: none;
+    }
+
+    i {
+        font-style: normal;
+    }
+
+    p {
+        margin: 0;
+        padding: 6px;
+    }
+
+    @media (max-width: 992px) {
+        .navbar-nav li{
+            width: 100%;
+        }
+    }
+
+    .my-svg-car {
+        width: 20px;
+        height: 20px;
+    }
+
+    .my-product-img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .my-step-1 {
+        width: 50px;
+        height: 50px;
+        background-color: #c1cb5b;
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 50px;
+        color: #ffffff;
+    }
+
+    .my-step {
+        position: relative;
+    }
+
+    .my-progress {
+        width: 70%;
+        position: absolute;
+        top: 18px;
+        right: -35%;
+    }
+
+    @media (max-width: 1200px) {
+        .my-progress {
+            width: 60%;
+            right: -30%;
+            top: 8px;
+        }
+
+        .my-step-1 {
+            width: 30px;
+            height: 30px;
+            font-size: 18px;
+            line-height: 30px;
+        }
+    }
+
+    .my-card-btn :hover {
+        color: #c1cb5b;
+    }
+
+    .btn-success {
+        background-color: #c1cb5b;
+        border-color: #c1cb5b;
+    }
+
+    @media (max-width: 768px) {
+        .my-footer-item {
+            text-align: center;
+        }
+    }
+</style>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg px-3" style="background-color: #3d513a;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="./img/logo-pink-2.png" style="height: 50px;" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    style="background-color: #f5c6b5;box-shadow: none;" data-bs-target="#navbarScroll"
+                    aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0 align-items-start">
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: #eee1d1;" href="./shop-home.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: #eee1d1;" href="#">About</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" style="color: #eee1d1;" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                所有商品
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item bg-body-secondary" href="#">居家裝飾</a></li>
+                                <li><a class="dropdown-item" href="#">蠟燭│擴香</a></li>
+                                <li><a class="dropdown-item" href="#">燈飾│鏡子</a></li>
+                                <li><a class="dropdown-item" href="#">牆面掛飾</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item bg-body-secondary" href="#">品牌選物</a></li>
+                                <li><a class="dropdown-item" href="#">SYRACUSE</a></li>
+                                <li><a class="dropdown-item" href="#">MAMANAUBE</a></li>
+                                <li><a class="dropdown-item" href="#">Woothic</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link bi bi-cart-fill" style="color: #eee1d1;" href="./shop-p1.html">
+                                購物車
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle bi bi-person-circle" style="color: #eee1d1;" href="#"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">&nbsp;</a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item bi bi-heart-fill" href="#">&nbsp;心願單</a></li>
+                                <li><a class="dropdown-item bi bi-bag-check-fill" href="#">&nbsp;我的訂單</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item bi bi-person-circle" href="./shop-login.html">&nbsp;登入/註冊</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="p-3" style="background-image: url(./img/下載\ \(9\).jpg);background-size: cover;">
+        <div class="card my-5 shadow-lg container-lg">
+            <div class="card-body p-4">
+                <h2 class="card-title">購物車</h2>
+                <div class="row py-5 px-2 md-px-0">
+                    <div class="col text-center align-items-center my-step">
+                        <div class="col-auto my-step-1 rounded-circle mx-auto mb-3">1</div>
+                        <div class="col">確認購物車</div>
+                        <div class="progress my-progress" role="progressbar" aria-label="Basic example"
+                            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar" style="width: 40%;background-color: #f5c6b5;"></div>
+                        </div>
+                    </div>
+                    <div class="col text-center align-items-center my-step">
+                        <div class="col-auto my-step-1 rounded-circle mx-auto mb-3 ">2</div>
+                        <div class="col">付款與運送方式</div>
+                        <div class="progress my-progress" role="progressbar" aria-label="Basic example"
+                            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar" style="width: 0%;background-color: #f5c6b5;"></div>
+                        </div>
+                    </div>
+                    <div class="col text-center align-items-center my-step">
+                        <div class="col-auto my-step-1 rounded-circle mx-auto mb-3 ">3</div>
+                        <div class="col">填寫資料</div>
+                        <div class="progress my-progress" role="progressbar" aria-label="Basic example"
+                            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar" style="width: 0%;background-color: #f5c6b5;"></div>
+                        </div>
+                    </div>
+                    <div class="col text-center align-items-center my-step">
+                        <div class="col-auto my-step-1 rounded-circle mx-auto mb-3 ">4</div>
+                        <div class="col">完成訂購</div>
+                    </div>
+                </div>
+                <hr>
+                <p class="card-text">
+                <h4 class="card-title mb-4">訂單明細</h4>
+                <div class="container text-start p-0">
+                    <div class="col align-items-center">
+                        <div class="row align-items-center">
+                            <div class="col-auto">
+                                <img src="./img/桌鐘遊戲機5.png" class="my-product-img rounded" alt="">
+                            </div>
+                            <div class="col mb-0">
+                                <p class="col mb-0 " alt="">遊戲機鬧鐘計時器
+                                </p>
+                                <p class="col mb-0 " alt="">#10234</p>
+                            </div>
+                            <p class="col-auto text-end mb-0" alt="">$890</p>
+                        </div>
+                        <hr>
+                        <div class="row align-items-center">
+                            <div class="col-auto">
+                                <img src="./img/桌鏡.jpg" class="my-product-img rounded" alt="">
+                            </div>
+                            <div class="col mb-0">
+                                <p class="col mb-0 " alt="">奶油風圓形化妝鏡
+                                </p>
+                                <p class="col mb-0 " alt="">#15302</p>
+                            </div>
+                            <p class="col-auto text-end mb-0" alt="">$490</p>
+                        </div>
+                        <hr>
+                        <div class="row align-items-center">
+                            <div class="col-auto">
+                                <img src="./img/桌燈白-2.jpg" class="my-product-img rounded" alt="">
+                            </div>
+                            <div class="col mb-0">
+                                <p class="col mb-0 " alt="">雲朵氛圍桌燈
+                                </p>
+                                <p class="col mb-0 " alt="">#13560</p>
+                            </div>
+                            <p class="col-auto text-end mb-0" alt="">$1,080</p>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+                <div class="row justify-content-end align-items-center mx-0 py-3">
+                    <div class="col-6 col-sm-auto">
+                        <p class="col text-body-tertiary">數量:</p>
+                        <p class="col text-body-tertiary">小計:</p>
+                        <p class="col text-body-tertiary">運費:</p>
+                        <p class="col text-body-tertiary">總計:</p>
+                    </div>
+                    <div class="col-6 col-sm-3 text-end px-0">
+                        <p class="col">3</p>
+                        <p class="col">$2,460</p>
+                        <p class="col">$80</p>
+                        <p class="col">$2,540</p>
+                    </div>
+                </div>
+                <div class="row justify-content-center justify-content-sm-between align-items-center mx-0 gap-3">
+                    <a class="col-auto my-card-btn" style="color: #3d513a;" href="./shop-home.html">
+                        <i class="bi bi-arrow-left">
+                            <span>返回購物</span></i>
+                    </a>
+                    <a href="./shop-p2-2版.html" class="col-auto btn btn-success px-5">下一步</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="col">
+        <div class="row row-cols-xl-5 row-cols-1 p-5 m-0 gap-3 justify-content-md-around"
+            style="background-color: #fffcf8;">
+            <a class="col row col-xl-auto col-12  justify-content-center mx-0 px-0 mb-5">
+                <div class="col-auto "><img src="./img/253822.png" alt="" style="height: 110px;"></div>
+                <ul class="col-auto navbar-nav px-3" style="color: #3d513a;font-size: 12px;">
+                    <li class="nav-item">
+                        <p>服務時間｜週一至週五 10:00-18:00</p>
+                    </li>
+                    <li class="nav-item">
+                        <p>E-mail｜service@kaiaselect.com</p>
+                    </li>
+                    <li class="nav-item">
+                        <p>聯絡地址:台中市東區進德路600號</p>
+                    </li>
+                </ul>
+            </a>
+            <ul class="col col-xl-auto col-md-2 navbar-nav px-2 mb-4 my-footer-item">
+                <h5 class="pb-2">關於我們</h5>
+                <li class="nav-item">
+                    <a class="nav-link py-1" href="#">品牌故事</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link py-1" href="#">最新公告</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link py-1" href="#">購物須知</a>
+                </li>
+            </ul>
+            <ul class="col col-xl-auto col-md-2 navbar-nav px-2 mb-4 my-footer-item">
+                <h5 class="pb-2">會員服務</h5>
+                <li class="nav-item">
+                    <a class="nav-link py-1" href="#">訂單查詢</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link py-1" href="#">退換貨服務</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link py-1" href="#">隱私權政策</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link py-1" href="#">防詐騙提醒</a>
+                </li>
+            </ul>
+            <ul class="col col-xl-auto col-md-2 navbar-nav px-2 mb-4 my-footer-item">
+                <h5 class="pb-2">社群平台</h5>
+                <li class="nav-item">
+                    <a class="nav-link py-1 bi bi-facebook" href="#">&nbsp;Facebook</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link py-1 bi bi-instagram" href="#">&nbsp;Instagram</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link py-1 bi bi-line" href="#">&nbsp;LINE</a>
+                </li>
+            </ul>
+            <ul class="col col-xl-auto col-md-2 navbar-nav px-2 mb-4 my-footer-item">
+                <h5 class="pb-2">客服中心</h5>
+                <li class="nav-item">
+                    <a class="nav-link py-1" href="#">聯絡我們</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link py-1" href="#">常見問題</a>
+                </li>
+            </ul>
+
+        </div>
+        <div class="col p-3" style="background-color: #3d513a;color: #f2f2f2;">KAIA 家居選物&nbsp;&nbsp;統一編號:00000000</div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
