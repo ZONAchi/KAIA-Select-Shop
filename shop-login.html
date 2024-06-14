@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KAIA Select Shop</title>
+    <link rel="icon" href="./img/253822 - 複製.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<style>
+    a {
+        text-decoration: none;
+        color: #3d513a;
+    }
+
+    .btn-success {
+        background-color: #c1cb5b;
+        border-color: #c1cb5b;
+    }
+</style>
+
+<body class="vh-100"
+    style="background-image: url(./img/下載\ \(9\)-70.png);background-size: cover;background-position: center;">
+    <main class="row vh-100 vw-100 m-0">
+        <div class="row col-md-4 col-lg-6 p-0 d-none d-md-block"
+            style="background-image: url(./img/70.png);background-size: cover;background-position: center;">
+            <div class="row col m-0 h-100 align-items-center">
+                <div style="font-family:'Times New Roman', Times, serif;color:#3d513a;">
+                    <p class="col-12 d-none d-lg-block" style="font-size: 72px;font-weight: bold;">Life
+                        style</p>
+                    <p class="col d-none d-lg-block" style="font-size: 40px">Life is all about having a
+                        good time.</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="row col-12 col-md-8 col-lg-6 h-100% vw-100% m-0 py-5 justify-content-center align-items-center">
+            <div class="row col-12 justify-content-center my-4"><img src="./img/253822.png" style="width: 200px;" alt="">
+            </div>
+            <div class="container">
+                <form action="./shop-p1.html" class="row col-12 g-3 needs-validation justify-content-center" novalidate>
+                <div class="col-8 mb-3">
+                    <label for="validationCustom03" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="validationCustom03" required
+                        placeholder="name@example.com">
+                    <div class="invalid-feedback">
+                        請輸入電子郵件
+                    </div>
+                </div>
+                <div class="col-8 mb-3 align-items-center">
+                    <label for="validationCustom03" class="form-label">密碼</label>
+                    <input type="password" class="form-control" id="inputPassword6" required placeholder="6-20位的英/數字">
+                    <div class="invalid-feedback">
+                        請輸入密碼
+                    </div>
+
+                </div>
+                <a class="col-8 text-end" href="" style="color:#3d513a;">忘記密碼?</a>
+                <div class="col-8 mb-3" href="./shop-p1.html">
+                    <button class="btn btn-success w-100" style="border-radius:50px;" type="submit">log in</button>
+                </div>
+            </form>
+            </div>
+            
+            <div class="col text-center my-3" style="font-size: 30px;color:#3d513a;">
+                <p class="mb-2" style="font-size: 14px;">或使用社群帳號登入</p>
+                <a href=""><i class="bi bi-facebook px-2"></i></a>
+                <a href=""><i class="bi bi-instagram px-2"></i></a>
+                <a href=""><i class="bi bi-line px-2"></i></a>
+            </div>
+        </div>
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
+    <script>
+        (() => {
+            'use strict'
+
+            const forms = document.querySelectorAll('.needs-validation')
+
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
+</body>
+
+</html>
