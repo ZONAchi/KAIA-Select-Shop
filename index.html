@@ -13,651 +13,90 @@
 <style>
     a {
         text-decoration: none;
-    }
-
-    i {
-        font-style: normal;
-    }
-
-    p {
-        margin: 0;
-        padding: 0px;
-    }
-
-    .scroll-container {
-        display: block;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    @media (max-width: 992px) {
-        .navbar-nav li {
-            width: 100%;
-        }
-    }
-
-    .navbar-nav li:hover{
-        background-color:#4d624a;
-    }
-
-    @media (min-width: 576px) {
-        main {
-            width: 80%;
-        }
-    }
-
-    .my-svg-car {
-        width: 20px;
-        height: 20px;
-    }
-
-    .my-product-img {
-        width: 50px;
-        height: 50px;
-    }
-
-    .my-step-1 {
-        width: 50px;
-        height: 50px;
-        background-color: #c1cb5b;
-        font-size: 24px;
-        font-weight: bold;
-        line-height: 50px;
-        color: #ffffff;
-    }
-
-    .my-step {
-        position: relative;
-    }
-
-    .my-progress {
-        width: 70%;
-        position: absolute;
-        top: 18px;
-        right: -35%;
-    }
-
-    @media (max-width: 1200px) {
-        .my-progress {
-            width: 60%;
-            right: -30%;
-            top: 8px;
-        }
-
-        .my-step-1 {
-            width: 30px;
-            height: 30px;
-            font-size: 18px;
-            line-height: 30px;
-        }
-    }
-
-    .my-card-btn :hover {
-        color: #c1cb5b;
+        color: #3d513a;
     }
 
     .btn-success {
         background-color: #c1cb5b;
         border-color: #c1cb5b;
     }
-
-    @media (max-width: 768px) {
-        .my-footer-item {
-            text-align: center;
-        }
-    }
-
-    .bi-star-fill,
-    .bi-star {
-        color: #f1b900;
-    }
-
-    @media (min-width: 768px) {
-        .three-card-text {
-            width: calc(100% - 200px);
-        }
-    }
-
-    @media (min-width: 992px) {
-        .table {
-            width: 80%;
-        }
-    }
-
-    @media (max-width: 992px) {
-        .table {
-            font-size: 12px;
-        }
-    }
-
-    .color-btn {
-        width: 20px;
-        height: 20px;
-        border-style: solid;
-        border-width: 2px;
-        border-color: black;
-    }
-
-    .map-all {
-        position: relative;
-    }
-
-    .contact-card {
-        width: 400px;
-        position: absolute;
-        top: 50%;
-        right: 100px;
-        transform: translate(0, -50%);
-    }
-
-    @media (max-width: 768px) {
-        .contact-card {
-            width: 95%;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-    }
 </style>
 
-<body style="background-color: #eee1d1;">
-    <header>
-        <nav class="navbar navbar-expand-lg px-3" style="background-color: #3d513a;">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img src="./img/logo-pink-2.png" style="height: 50px;" alt=""></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    style="background-color: #f5c6b5;box-shadow: none;" data-bs-target="#navbarScroll"
-                    aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarScroll">
-                    <ul class="navbar-nav ms-auto my-2 my-lg-0 align-items-start">
-                        <li class="nav-item">
-                            <a class="nav-link" style="color: #eee1d1;" href="./shop-home.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" style="color: #eee1d1;" href="#page-plan">風格計畫</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" style="color: #eee1d1;" href="#page-new">新品上架</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" style="color: #eee1d1;" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                所有商品
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="#page-all">所有商品</a></li>
-                                <li><a class="dropdown-item bg-body-secondary" href="#">居家裝飾</a></li>
-                                <li><a class="dropdown-item" href="#">蠟燭│擴香</a></li>
-                                <li><a class="dropdown-item" href="#">燈飾│鏡子</a></li>
-                                <li><a class="dropdown-item" href="#">牆面掛飾</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item bg-body-secondary" href="#">品牌選物</a></li>
-                                <li><a class="dropdown-item" href="#">SYRACUSE</a></li>
-                                <li><a class="dropdown-item" href="#">MAMANAUBE</a></li>
-                                <li><a class="dropdown-item" href="#">Woothic</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link bi bi-cart-fill" style="color: #eee1d1;" href="./shop-p1.html">
-                                購物車
-                            </a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle bi bi-person-circle" style="color: #eee1d1;" href="#"
-                                role="button" data-bs-toggle="dropdown" aria-expanded="false">&nbsp;</a>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item bi bi-heart-fill" href="#">&nbsp;心願單</a></li>
-                                <li><a class="dropdown-item bi bi-bag-check-fill" href="#">&nbsp;我的訂單</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item bi bi-person-circle"
-                                        href="./shop-login.html">&nbsp;登入/註冊</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <div class="container-fluid m-0 px-0 mb-5">
-            <div id="carouselExampleIndicators" class="carousel slide">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                        class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="./img/bath-橫.jpg" class="img-fluid d-block" style="width: 100%;" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./img/header-2橫-2.jpg" class="img-fluid d-block" style="width: 100%;" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./img/header-3-橫.jpg" class="img-fluid d-block" style="width: 100%;" alt="...">
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </div>
-    </header>
-    <main class="contanier scroll-container row gap-5 m-0 mx-auto py-5 justify-content-center">
-        <div class="card-title text-center">
-            <h2 class="mb-4" style="font-weight: bold;">微小細節感受生活美學</h2>
-            <p class="py-2">打造一個舒適、溫馨的居家環境是每個人的夢想</p>
-            <p class="py-2">透過巧妙的佈置，營造出令人放鬆和快樂的生活空間</p>
-            <p class="py-2">KAIA Select Shop分享以下3個方法，幫助您打造理想的居家環境</p>
-        </div>
-        <div class="contanier card-all row row-cols-1 row-cols-lg-3 g-3 mb-3">
-            <div class="col">
-                <div class="card h-100 p-3">
-                    <div class="card-body p-0">
-                        <h5 class="card-title">添加自然元素</h5>
-                        <p class="card-text px-0">自然元素能為家中帶來生氣和色彩，植物不僅能提高室內空氣質量，還能增加舒適感和視覺吸引力。</p>
-                    </div>
-                    <a class="col-auto my-card-btn" style="color: #d18b71;" href="#">more></a>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100 p-3">
-                    <div class="card-body p-0">
-                        <h5 class="card-title">利用光線營造氛圍</h5>
-                        <p class="card-text px-0">盡可能利用自然光線，讓陽光進入您的家中。不同的區域使用不同的燈具，如壁燈、臺燈或吊燈，以營造不同的氛圍。</p>
-                    </div>
-                    <a class="col-auto my-card-btn" style="color: #d18b71;" href="#">more></a>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100 p-3">
-                    <div class="card-body p-0">
-                        <h5 class="card-title">注重細節與個人風格</h5>
-                        <p class="card-text px-0">可以選擇統一的色彩主題，應用在家具、窗簾、地毯和軟裝飾品上。可以為居家環境帶來一種和諧和統一感。.</p>
-                    </div>
-                    <a class="col-auto my-card-btn" style="color: #d18b71;" href="#">more></a>
-                </div>
-            </div>
-        </div>
-        <div class="row col-12 justify-content-center m-0 mb-5">
-            <button type="button" class="col-auto btn btn-success px-4">推薦商品</button>
-        </div>
-        <div class="container img-all mb-5 scroll-page text-start" id="page-plan">
-            <div class="row mb-5">
-                <p class="col-4 fs-1" style="font-weight: bold;">本月風格計畫</p>
-                <div class="col">
-                    <p class="col fs-4 fw-semibold badge text-wrap mb-2" style="background-color: #b3c598;">#奶油森林</p>
-                    <p class="col">本月風格計畫打造了城市中的奶油系森林小宅，以淡彩色調為基礎，營造舒適輕盈的氛圍。並透過喜愛的收藏品們填滿屬於自己的空間。</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-6">
-                    <div class="col row mb-2">
-                        <img src="./img/my scandinavian home.jpg" class="col-6 px-1 img-fluid" style="height:1;" alt="">
-                        <img src="./img/地毯綠.jpg" class="col-6 px-1 img-fluid" style="height: 30%;" alt="">
-                    </div>
-                    <div class="col row">
-                        <img src="./img/header-2橫-2.jpg" class="img-fluid px-1" alt="">
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="col row mb-2">
-                        <img src="./img/bath-橫.jpg" class="img-fluid px-1" alt="">
-                    </div>
-                    <div class="col row">
-                        <img src="./img/格-2.jpg" class="col-6 px-1 img-fluid" alt="">
-                        <img src="./img/aesthetics.jpg" class="col-6 px-1 img-fluid" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container table-all row justify-content-center m-0 mb-5 ">
-            <div class="table-title text-center mb-5">
-                <h2 style="font-weight: bold;">每月風格計畫</h2>
-                <p>隨著四季更迭，軟裝換裝亦是讓生活感變化的魔幻時分</p>
-                <p>探索每月空間風格計畫，打造迎接四季、屬於自身的舒適場域！</p>
-            </div>
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">月份</th>
-                        <th scope="col">風格計畫</th>
-                        <th scope="col">色調</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">5月</th>
-                        <td><a href="" style="color: #d18b71;">#初夏食堂｜沐浴夏日陽光</a></td>
-                        <td>米白色基調+黃綠跳色</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">4月</th>
-                        <td><a href="" style="color: #d18b71;">#祕密花園｜擁抱花園的氛圍入睡吧</a></td>
-                        <td>米、粉色基調+小碎花</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3月</th>
-                        <td><a href="" style="color: #d18b71;">#片刻駐留｜飯店感室內生活</a></td>
-                        <td>純白基調+木質</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="container table-bottom row justify-content-center px-0 m-0" style="width: 80%;">
-                <a href="#" class="col-auto btn btn-success px-5">more</a>
-            </div>
-        </div>
-        <div class="contanier card-all row p-0 m-0 mb-5 scroll-page" id="page-new">
-            <div class="row row-cols-1 row-cols-lg-2 mb-2 m-0">
-                <h2 class="col mb-3 w-100 fw-bolder">新品上架</h2>
-                <p class="col w-100">初夏，夏季的第一個月。又稱孟夏。</p>
-                <p class="col w-100">在即將迎接夏天之際，打造了我們的理想空間，沐浴在夏日陽光中，清新而恬靜，簡單而美好。</p>
-            </div>
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 m-0 text-start">
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="./img/花毛巾.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bolder">花朵毛巾/浴巾</h5>
-                            <p class="card-text">置身於綠意盎然的花園中，在自然氛围中得到放鬆與寧靜。</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="./img/枕套三色.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bolder">格紋純棉枕套</h5>
-                            <p class="card-text">一杯熱茶、一張躺椅、一本小說，還有從45度角灑落的和煦陽光，今天也安靜溫柔的度過吧。
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="./img/桌鏡.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bolder">奶油風化妝鏡</h5>
-                            <p class="card-text">奶茶色圓潤邊框設計，放置在梳妝台上，陪你梳理每個日常。</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="./img/小木櫃.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bolder">閣樓上的木頭收納櫃</h5>
-                            <p class="card-text">在閣樓的一角，桌面上的收納櫃，前開的上掀式設計，操作中帶點儀式感的開箱。</p>
-                        </div>
-                    </div>
+<body class="vh-100"
+    style="background-image: url(./img/下載\ \(9\)-70.png);background-size: cover;background-position: center;">
+    <main class="row vh-100 vw-100 m-0">
+        <div class="row col-md-4 col-lg-6 p-0 d-none d-md-block"
+            style="background-image: url(./img/70.png);background-size: cover;background-position: center;">
+            <div class="row col m-0 h-100 align-items-center">
+                <div style="font-family:'Times New Roman', Times, serif;color:#3d513a;">
+                    <p class="col-12 d-none d-lg-block" style="font-size: 72px;font-weight: bold;">Life
+                        style</p>
+                    <p class="col d-none d-lg-block" style="font-size: 40px">Life is all about having a
+                        good time.</p>
                 </div>
             </div>
 
         </div>
-        <div class="contanier three-card row m-0 mx-auto" style="width: 80%;">
-            <div class="row col-12 m-0 px-0 justify-content-center justify-content-md-start">
-                <div class="col-auto px-0 mb-3 mb-md-0"><img src="./img/地毯綠.jpg" style="width: 200px;" alt=""></div>
-                <div class="three-card-text row align-items-end m-0 p-0">
-                    <div class="align-self-start">
-                        <h3>韓國選品｜Totti Big Check 地毯</h3>
-                        <p>柔軟的短毛地毯，帶有厚度像踏上草地般輕柔，格紋網狀般不受拘束的條紋感，隨性且具有個性。</p>
-                    </div>
-                    <a class="col-auto my-card-btn" style="color: #d18b71;" href="#">more></a>
-                </div>
+        <div class="row col-12 col-md-8 col-lg-6 h-100% vw-100% m-0 py-5 justify-content-center align-items-center">
+            <div class="row col-12 justify-content-center my-4 m-0"><img src="./img/253822.png" style="width: 200px;"
+                    alt="">
             </div>
-            <hr class="my-5">
-            <div class="row col-12 m-0 px-0 justify-content-center justify-content-md-start">
-                <div class="three-card-text row align-items-end m-0 p-0">
-                    <div class="align-self-start">
-                        <h3>Liberte｜復古造型時鐘</h3>
-                        <p>以復古時鐘為設計靈感，復古色系搭配撞色轉輪，讓人看了保持好心情，放在各種空間皆可愛。</p>
+            <div class="container">
+                <form action="./shop-p1.html" class="row g-3 needs-validation justify-content-center" novalidate>
+                    <div class="col-12 col-sm-8 mb-3">
+                        <label for="validationCustom03" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="validationCustom03" required
+                            placeholder="name@example.com">
+                        <div class="invalid-feedback">
+                            請輸入電子郵件
+                        </div>
                     </div>
-                    <a class="col-auto my-card-btn" style="color: #d18b71;" href="#">more></a>
-                </div>
-                <div class="col-auto px-0 mb-3 mb-md-0"><img src="./img/鐘粉.png" style="width: 200px;" alt=""></div>
+                    <div class="col-12 col-sm-8 mb-3 align-items-center">
+                        <label for="validationCustom03" class="form-label">密碼</label>
+                        <input type="password" class="form-control" id="inputPassword6" required
+                            placeholder="6-20位的英/數字">
+                        <div class="invalid-feedback">
+                            請輸入密碼
+                        </div>
+
+                    </div>
+                    <a class="col-12 col-sm-8 text-end" href="" style="color:#3d513a;">忘記密碼?</a>
+                    <div class="col-12 col-sm-8 mb-3" href="./shop-p1.html">
+                        <button class="btn btn-success w-100" style="border-radius:50px;" type="submit">log in</button>
+                    </div>
+                </form>
             </div>
-            <hr class="my-5">
-            <div class="row col-12 m-0 mb-5 px-0 justify-content-center justify-content-md-start">
-                <div class="col-auto px-0 mb-3 mb-md-0"><img src="./img/鬆餅沙發.png" style="width: 200px;" alt=""></div>
-                <div class="three-card-text row align-items-end m-0">
-                    <div class="align-self-start">
-                        <h3>選品傢俱｜鬆餅雙人沙發床</h3>
-                        <p>獨家自選布料，溫暖杏白色讓空間更舒適柔和，多種使用情境，有效利用居家空間。</p>
-                    </div>
-                    <a class="col-auto my-card-btn" style="color: #d18b71;" href="#">more></a>
-                </div>
-            </div>
-            <button type="button" class="col-auto btn btn-success px-4 mx-auto mb-5">更多商品</button>
-        </div>
-        <div class="container big-cart row row-cols-1 row-cols-md-2 scroll-page m-0" id="page-all">
-            <div class="col mb-5"><img src="./img/邊桌.png" alt="" style="width: 100%;"></div>
-            <div class="row col m-0 mb-5 row-gap-3">
-                <div class="col-12 card-top px-0">
-                    <p>韓國 Woodray</p>
-                    <p class="fs-3 fw-bolder">橢圓客廳沙發邊桌</p>
-                    <div class="row gap-1 m-0">
-                        <i class="col-auto bi bi-star-fill p-0"></i>
-                        <i class="col-auto bi bi-star-fill p-0"></i>
-                        <i class="col-auto bi bi-star-fill p-0"></i>
-                        <i class="col-auto bi bi-star-fill p-0"></i>
-                        <i class="col-auto bi bi-star p-0"></i>
-                        <p class="col-auto">2,000人購買</p>
-                    </div>
-                </div>
-                <div class="col-12 card-main px-0">
-                    <p class="mb-3">採用優質材料製成，注重細節，簡約設計與幾何輪廓，輕鬆融入各種空間，為任何空間增添了溫暖和個性。</p>
-                    <div class="row align-items-center">
-                        <p class="col-auto">Color</p>
-                        <a href="" class="color-btn rounded-circle p-0 mx-1" style="background-color: #f2f2f2;"></a>
-                        <a href="" class="color-btn rounded-circle p-0 mx-1" style="background-color: #cbba96;"></a>
-                        <a href="" class="color-btn rounded-circle p-0 mx-1" style="background-color: #453b32;"></a>
-                        <p class="col-auto">Size</p>
-                        <select class="form-select col" aria-label="Default select example">
-                            <option value="1">30x50cm</option>
-                            <option value="2">50x70cm</option>
-                        </select>
-                    </div>
-                    <hr class="my-1">
-                </div>
-                <div class="row col-12 card-bottom px-0 m-0 align-items-center" style="height: 40px;">
-                    <p class="col px-0 text-start">NT$1,390</p>
-                    <button type="button" class="col-auto btn btn-success">加入購物車</button>
-                    <a href="" class="col-auto bi bi-suit-heart-fill fs-3" style="color: #d18b71;"></a>
-                </div>
+
+            <div class="col text-center my-3" style="font-size: 30px;color:#3d513a;">
+                <p class="mb-2" style="font-size: 14px;">或使用社群帳號登入</p>
+                <a href=""><i class="bi bi-facebook px-2"></i></a>
+                <a href=""><i class="bi bi-instagram px-2"></i></a>
+                <a href=""><i class="bi bi-line px-2"></i></a>
             </div>
         </div>
-        <div class="container small-card row row-cols-1 row-cols-md-4 m-0 text-start">
-            <div class="col mb-4">
-                <div class="ratio ratio-1x1">
-                    <img src="./img/杯墊.png" alt="">
-                </div>
-                <div class="row col mt-3" style="height: 100px;">
-                    <p class="col-12" style="font-size: 12px;height: 15px;">MAMANAUBE</p>
-                    <p class="col-12 align-self-start fs-6 fw-semibold mb-2" style="height: 45px;">Le café du matin 杯墊
-                    </p>
-                    <p class="col-12 align-self-end">NT$170</p>
-                </div>
-            </div>
-            <div class="col mb-4">
-                <div class="ratio ratio-1x1">
-                    <img src="./img/杯.png" alt="">
-                </div>
-                <div class="row col mt-3" style="height: 100px;">
-                    <p class="col-12" style="font-size: 12px;height: 15px;">Same.d</p>
-                    <p class="col-12 align-self-start fs-6 fw-semibold mb-2" style="height: 45px;">Paris mug 馬克杯</p>
-                    <p class="col-12 align-self-end">NT$480</p>
-                </div>
-            </div>
-            <div class="col mb-4">
-                <div class="ratio ratio-1x1">
-                    <img src="./img/小木櫃.png" alt="">
-                </div>
-                <div class="row col mt-3" style="height: 100px;">
-                    <p class="col-12" style="font-size: 12px;height: 15px;">kaia</p>
-                    <p class="col-12 align-self-start fs-6 fw-semibold mb-2" style="height: 45px;">閣樓上的木頭收納櫃</p>
-                    <p class="col-12 align-self-end">NT$1,280</p>
-                </div>
-            </div>
-            <div class="col mb-4">
-                <div class="ratio ratio-1x1">
-                    <img src="./img/鐘檸黃.png" alt="">
-                </div>
-                <div class="row col mt-3" style="height: 100px;">
-                    <p class="col-12" style="font-size: 12px;height: 15px;">Liberte</p>
-                    <p class="col-12 align-self-start fs-6 fw-semibold mb-2" style="height: 45px;">復古造型時鐘</p>
-                    <p class="col-12 align-self-end">NT$1,480</p>
-                </div>
-            </div>
-            <div class="col mb-4">
-                <div class="ratio ratio-1x1">
-                    <img src="./img/花毛巾-2.png" alt="">
-                </div>
-                <div class="row col mt-3" style="height: 100px;">
-                    <p class="col-12" style="font-size: 12px;height: 15px;">kaia</p>
-                    <p class="col-12 align-self-start fs-6 fw-semibold mb-2" style="height: 45px;">純棉花朵毛巾/浴巾</p>
-                    <p class="col-12 align-self-end">NT$280/480</p>
-                </div>
-            </div>
-            <div class="col mb-4">
-                <div class="ratio ratio-1x1">
-                    <img src="./img/枕套多色.jpg" alt="">
-                </div>
-                <div class="row col mt-3" style="height: 100px;">
-                    <p class="col-12" style="font-size: 12px;height: 15px;">kaia</p>
-                    <p class="col-12 align-self-start fs-6 fw-semibold mb-2" style="height: 45px;">個性格紋枕套</p>
-                    <p class="col-12 align-self-end">NT$390</p>
-                </div>
-            </div>
-            <div class="col mb-4">
-                <div class="ratio ratio-1x1">
-                    <img src="./img/英字地毯.png" alt="">
-                </div>
-                <div class="row col mt-3" style="height: 100px;">
-                    <p class="col-12" style="font-size: 12px;height: 15px;">韓國選品</p>
-                    <p class="col-12 align-self-start fs-6 fw-semibold mb-2" style="height: 45px;">Script Letteting 腳踏墊
-                    </p>
-                    <p class="col-12 align-self-end">NT$590</p>
-                </div>
-            </div>
-            <div class="col mb-4">
-                <div class="ratio ratio-1x1">
-                    <img src="./img/桌鏡.jpg" alt="">
-                </div>
-                <div class="row col mt-3" style="height: 100px;">
-                    <p class="col-12" style="font-size: 12px;height: 15px;">韓國選品</p>
-                    <p class="col-12 align-self-start fs-6 fw-semibold mb-2" style="height: 45px;">奶油色化妝鏡</p>
-                    <p class="col-12 align-self-end">NT$890</p>
-                </div>
-            </div>
-        </div>
+
     </main>
-    <div class="container-fliud map-all">
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d8652.46671116523!2d120.51545864528468!3d24.24478227401651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1szh-TW!2stw!4v1718264059833!5m2!1szh-TW!2stw"
-            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-        <div class="card contact-card mb-3">
-            <div class="card-body">
-                <h5 class="card-title">Contact</h5>
-                <p class="card-text mb-3">謝謝您的主動聯絡，請留下要諮詢的問題，我們會用以下資訊進行回覆。</p>
-                <div class="mb-3">
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="輸入您的電子信箱">
-                </div>
-                <div class="mb-3">
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"
-                        placeholder="輸入您的訊息"></textarea>
-                </div>
-                <a href="#" class="btn btn-success w-100">送出</a>
-            </div>
-        </div>
-    </div>
-    <footer class="col">
-        <div class="row row-cols-xl-5 row-cols-1 p-5 m-0 gap-3 justify-content-md-around"
-            style="background-color: #fffcf8;">
-            <a class="col row col-xl-auto col-12  justify-content-center mx-0 px-0 mb-5">
-                <div class="col-auto "><img src="./img/253822.png" alt="" style="height: 110px;"></div>
-                <ul class="col-auto navbar-nav px-3" style="color: #3d513a;font-size: 12px;">
-                    <li class="nav-item">
-                        <p>服務時間｜週一至週五 10:00-18:00</p>
-                    </li>
-                    <li class="nav-item">
-                        <p>E-mail｜service@kaiaselect.com</p>
-                    </li>
-                    <li class="nav-item">
-                        <p>聯絡地址:台中市東區進德路600號</p>
-                    </li>
-                </ul>
-            </a>
-            <ul class="col col-xl-auto col-md-2 navbar-nav px-2 mb-4 my-footer-item">
-                <h5 class="pb-2">關於我們</h5>
-                <li class="nav-item">
-                    <a class="nav-link py-1" href="#">品牌故事</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link py-1" href="#">最新公告</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link py-1" href="#">購物須知</a>
-                </li>
-            </ul>
-            <ul class="col col-xl-auto col-md-2 navbar-nav px-2 mb-4 my-footer-item">
-                <h5 class="pb-2">會員服務</h5>
-                <li class="nav-item">
-                    <a class="nav-link py-1" href="#">訂單查詢</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link py-1" href="#">退換貨服務</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link py-1" href="#">隱私權政策</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link py-1" href="#">防詐騙提醒</a>
-                </li>
-            </ul>
-            <ul class="col col-xl-auto col-md-2 navbar-nav px-2 mb-4 my-footer-item">
-                <h5 class="pb-2">社群平台</h5>
-                <li class="nav-item">
-                    <a class="nav-link py-1 bi bi-facebook" href="#">&nbsp;Facebook</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link py-1 bi bi-instagram" href="#">&nbsp;Instagram</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link py-1 bi bi-line" href="#">&nbsp;LINE</a>
-                </li>
-            </ul>
-            <ul class="col col-xl-auto col-md-2 navbar-nav px-2 mb-4 my-footer-item">
-                <h5 class="pb-2">客服中心</h5>
-                <li class="nav-item">
-                    <a class="nav-link py-1" href="#">聯絡我們</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link py-1" href="#">常見問題</a>
-                </li>
-            </ul>
-
-        </div>
-        <div class="col p-3" style="background-color: #3d513a;color: #f2f2f2;">KAIA 家居選物&nbsp;&nbsp;統一編號:00000000</div>
-    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
+    <script>
+        (() => {
+            'use strict'
+
+            const forms = document.querySelectorAll('.needs-validation')
+
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
 </body>
 
 </html>
