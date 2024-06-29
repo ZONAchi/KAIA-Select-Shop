@@ -36,8 +36,8 @@
     }
 
     .my-product-img {
-        width: 50px;
-        height: 50px;
+        width: 80px;
+        height: 80px;
     }
 
     .my-step-1 {
@@ -191,30 +191,30 @@
                 <hr>
                 <div class="row align-items-center mb-4">
                     <p class="col">商品資訊</p>
-                    <p class="col-auto">單價</p>
-                    <p class="col-auto px-5">數量</p>
-                    <p class="col-auto col-md-2">小計</p>
+                    <p class="col-2">數量</p>
+                    <p class="col-2">小計</p>
                 </div>
-                <div class="container text-start p-0 mx-0">
+                <div class="container-lg text-start p-0 mx-0">
                     <div class="col align-items-center px-0">
-                        <div class="row align-items-center px-0">
-                            <div class="col-auto">
-                                <img src="./img/桌鐘遊戲機5.png" class="my-product-img rounded" alt="">
-                            </div>
+                        <div class="row align-items-center px-0 m-0">
+                            <!-- <div class="col-auto">
+                                <img src="./img/邊桌-方.png" class="my-product-img rounded" alt="">
+                            </div> -->
+                            <img src="" id="pro_img_show" class="col-auto p-0 my-product-img rounded" alt="" >
                             <div class="col mb-0">
-                                <p class="col mb-0" alt="">遊戲機鬧鐘計時器
-                                </p>
-                                <p class="col mb-0" alt="">#10234</p>
+                                <div id="product_show" class="col mb-0" alt=""></div>
                             </div>
-                            <div class="col-auto mb-0 p-0">
-                                <button type="button" class="btn bi bi-dash-square-fill" style="font-size: 20px; color:#c1cb5b"></button>
-                                <span>1</span>
-                                <button type="button" class="btn bi bi-plus-square-fill" style="font-size: 20px; color:#c1cb5b"></button>
+                            <div class="col-auto col-md-2 mb-0 p-0">
+                                <button type="button" id="dash_btn" class="btn bi bi-dash-square-fill"
+                                    style="font-size: 20px; color:#c1cb5b"></button>
+                                <span id="show_amount"></span>
+                                <button type="button" id="plus_btn" class="btn bi bi-plus-square-fill"
+                                    style="font-size: 20px; color:#c1cb5b"></button>
                             </div>
-                            <p class="col-auto col-md-2 mb-0" alt="">$890</p>
+                            <p id="subtotal_show" class="col-auto col-sm-2 mb-0" alt=""></p>
                         </div>
                         <hr>
-                        <div class="row align-items-center">
+                        <!-- <div class="row align-items-center">
                             <div class="col-auto">
                                 <img src="./img/桌鏡.jpg" class="my-product-img rounded" alt="">
                             </div>
@@ -222,13 +222,16 @@
                                 <p class="col mb-0 " alt="">奶油風圓形化妝鏡
                                 </p>
                                 <p class="col mb-0 " alt="">#15302</p>
+                                <p class="col mb-0" alt="">單價 : 490</p>
                             </div>
-                            <div class="col-auto mb-0 p-0">
-                                <button type="button" class="btn bi bi-dash-square-fill" style="font-size: 20px; color:#c1cb5b"></button>
+                            <div class="col-auto col-md-2 mb-0 p-0">
+                                <button type="button" class="btn bi bi-dash-square-fill"
+                                    style="font-size: 20px; color:#c1cb5b"></button>
                                 <span>1</span>
-                                <button type="button" class="btn bi bi-plus-square-fill" style="font-size: 20px; color:#c1cb5b"></button>
+                                <button type="button" class="btn bi bi-plus-square-fill"
+                                    style="font-size: 20px; color:#c1cb5b"></button>
                             </div>
-                            <p class="col-auto col-md-2 mb-0" alt="">$490</p>
+                            <p class="col-auto col-sm-2 mb-0" alt="">490</p>
                         </div>
                         <hr>
                         <div class="row align-items-center">
@@ -239,29 +242,27 @@
                                 <p class="col mb-0 " alt="">雲朵氛圍桌燈
                                 </p>
                                 <p class="col mb-0 " alt="">#13560</p>
+                                <p class="col mb-0" alt="">單價 : 1,080</p>
                             </div>
-                            <div class="col-auto mb-0 p-0">
-                                <button type="button" class="btn bi bi-dash-square-fill" style="font-size: 20px; color:#c1cb5b"></button>
+                            <div class="col-auto col-md-2 mb-0 p-0">
+                                <button type="button" class="btn bi bi-dash-square-fill"
+                                    style="font-size: 20px; color:#c1cb5b"></button>
                                 <span>1</span>
-                                <button type="button" class="btn bi bi-plus-square-fill" style="font-size: 20px; color:#c1cb5b"></button>
+                                <button type="button" class="btn bi bi-plus-square-fill"
+                                    style="font-size: 20px; color:#c1cb5b"></button>
                             </div>
-                            <p class="col-auto col-md-2 mb-0" alt="">$1,080</p>
+                            <p class="col-auto col-sm-2 mb-0" alt="">1,080</p>
                         </div>
-                        <hr>
+                        <hr> -->
                     </div>
                 </div>
                 <div class="row justify-content-end align-items-center mx-0 py-3">
                     <div class="col-6 col-sm-auto">
                         <p class="col text-body-tertiary">數量:</p>
-                        <p class="col text-body-tertiary">小計:</p>
-                        <p class="col text-body-tertiary">運費:</p>
                         <p class="col text-body-tertiary">總計:</p>
                     </div>
                     <div class="col-6 col-sm-3 text-end px-0">
-                        <p class="col">3</p>
-                        <p class="col">$2,460</p>
-                        <p class="col">$80</p>
-                        <p class="col">$2,540</p>
+                        <p id="total_show" class="col"></p>
                     </div>
                 </div>
                 <div class="row justify-content-center justify-content-sm-between align-items-center mx-0 gap-3">
@@ -344,8 +345,83 @@
         <div class="col p-3" style="background-color: #3d513a;color: #f2f2f2;">KAIA 家居選物&nbsp;&nbsp;統一編號:00000000</div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
+    <script>
+        let product01 = [
+            { 'img': '','name': '橢圓客廳沙發邊桌', 'item_num': '10234', 'unit_price': '1390', },
+        ];
+        product01[0].src = './img/邊桌-方.png';
+        let product_show = document.querySelector('#product_show');
+        let pro_img_show = document.querySelector('#pro_img_show');
+        product01.forEach((item) => {
+            product_show.innerHTML += `
+            <img src="" id="pro_img_show">${item.img}
+            <div class="col mb-0">
+                <div id="product_show" class="col mb-0" alt=""> ${item.name} </div>
+                <div id="product_show" class="col mb-0" alt=""> # ${item.item_num} </div>
+                <div id="product_show" class="col mb-0" alt=""> 單價 : ${item.unit_price} </div>
+            </div>`;
+            console.log(product_show);
+        });
+
+        let product02 = [
+            { 'name': '客廳沙發邊桌', 'item_num': '10234', 'unit_price': '1390', },
+        ];
+        product02.forEach((item) => {
+            product_show.innerHTML += `
+            <div class="col mb-0">
+                <div id="product_show" class="col mb-0" alt=""> ${item.name} </div>
+                <div id="product_show" class="col mb-0" alt=""> # ${item.item_num} </div>
+                <div id="product_show" class="col mb-0" alt=""> 單價 : ${item.unit_price} </div>
+            </div>`;
+            console.log(product_show);
+        });
+        // 數量編輯按鈕
+        let plus_btn = document.querySelector('#plus_btn');
+        let dash_btn = document.querySelector('#dash_btn');
+        let amount = 1;
+        show_amount.innerHTML = 'amount';
+        amount_show();
+
+        function amount_show() {
+            console.log(amount);
+            let show_amount = document.querySelector('#show_amount')
+            show_amount.innerHTML = '';
+            show_amount.innerHTML += `<span id="show_amount"> ${amount} </span>`;
+            //小計計算
+            product01.forEach((item) => {
+                let price = item.unit_price;
+                console.log(price * amount);
+                let subtotal_show = document.querySelector('#subtotal_show');
+                subtotal_show.innerHTML = '';
+                subtotal_show.innerHTML += `
+                <p id="subtotal_show"> ${price * amount} </p>`;
+                console.log(subtotal_show);
+                // 總計
+                let total_show = document.querySelector('#total_show');
+                console.log(total_show);
+                total_show.innerHTML = '';
+                total_show.innerHTML += `
+                <p id="total_show"> ${amount}</p>
+                <p id="total_show"> ${price * amount}</p>`;
+            });
+        };
+
+        plus_btn.addEventListener('click', function () {
+            amount++;
+            amount_show()
+        });
+        dash_btn.addEventListener('click', function () {
+            if (amount <= 1) {
+                return;
+            } else {
+                amount--;
+            }
+            amount_show();
+        });
+
+    </script>
 </body>
 
 </html>
