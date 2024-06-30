@@ -197,10 +197,10 @@
                 <div class="container-lg text-start p-0 mx-0">
                     <div class="col align-items-center px-0">
                         <div class="row align-items-center px-0 m-0">
-                            <!-- <div class="col-auto">
+                            <div class="col-auto">
                                 <img src="./img/邊桌-方.png" class="my-product-img rounded" alt="">
-                            </div> -->
-                            <img src="" id="pro_img_show" class="col-auto p-0 my-product-img rounded" alt="" >
+                            </div>
+                            <!-- <img src="" id="pro_img_show" class="col-auto p-0 my-product-img rounded" alt="" > -->
                             <div class="col mb-0">
                                 <div id="product_show" class="col mb-0" alt=""></div>
                             </div>
@@ -356,7 +356,6 @@
         let pro_img_show = document.querySelector('#pro_img_show');
         product01.forEach((item) => {
             product_show.innerHTML += `
-            <img src="" id="pro_img_show">${item.img}
             <div class="col mb-0">
                 <div id="product_show" class="col mb-0" alt=""> ${item.name} </div>
                 <div id="product_show" class="col mb-0" alt=""> # ${item.item_num} </div>
@@ -365,18 +364,18 @@
             console.log(product_show);
         });
 
-        let product02 = [
-            { 'name': '客廳沙發邊桌', 'item_num': '10234', 'unit_price': '1390', },
-        ];
-        product02.forEach((item) => {
-            product_show.innerHTML += `
-            <div class="col mb-0">
-                <div id="product_show" class="col mb-0" alt=""> ${item.name} </div>
-                <div id="product_show" class="col mb-0" alt=""> # ${item.item_num} </div>
-                <div id="product_show" class="col mb-0" alt=""> 單價 : ${item.unit_price} </div>
-            </div>`;
-            console.log(product_show);
-        });
+        // let product02 = [
+        //     { 'name': '客廳沙發邊桌', 'item_num': '10234', 'unit_price': '1390', },
+        // ];
+        // product02.forEach((item) => {
+        //     product_show.innerHTML += `
+        //     <div class="col mb-0">
+        //         <div id="product_show" class="col mb-0" alt=""> ${item.name} </div>
+        //         <div id="product_show" class="col mb-0" alt=""> # ${item.item_num} </div>
+        //         <div id="product_show" class="col mb-0" alt=""> 單價 : ${item.unit_price} </div>
+        //     </div>`;
+        //     console.log(product_show);
+        // });
         // 數量編輯按鈕
         let plus_btn = document.querySelector('#plus_btn');
         let dash_btn = document.querySelector('#dash_btn');
