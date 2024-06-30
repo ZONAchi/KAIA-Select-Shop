@@ -189,46 +189,18 @@
                 <p class="card-text">
                 <h4 class="card-title">付款方式</h4>
                 <div class="container text-start p-3">
-                    <div class="form-check py-3">
-                        <input id="pay_cash" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            貨到付款
-                        </label>
-                    </div>
-                    <div class="form-check py-3">
-                        <input id="pay_card" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            信用卡付款
-                        </label>
-                    </div>
-                    <div class="form-check py-3">
-                        <input id="pay_atm" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            網路ATM
-                        </label>
+                    <div id="pay_check" class="form-check py-3">
+                        <!-- <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"> -->
+                        <!-- <label class="form-check-label" for="flexRadioDefault1"></label> -->
                     </div>
                 </div>
                 <hr>
                 <p class="card-text">
                 <h4 class="card-title">運送方式</h4>
                 <div class="container text-start p-3">
-                    <div class="form-check py-3">
-                        <input id="transport_home" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            黑貓宅配
-                        </label>
-                    </div>
-                    <div class="form-check py-3">
-                        <input id="transport_711" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            711超商
-                        </label>
-                    </div>
-                    <div class="form-check py-3">
-                        <input id="transport_fh" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            全家超商
-                        </label>
+                    <div id="transport_check" class="form-check py-3">
+                        <!-- <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1"></label> -->
                     </div>
                 </div>
                 <div class="row justify-content-end align-items-center mx-0 py-3">
@@ -325,20 +297,53 @@
         <div class="col p-3" style="background-color: #3d513a;color: #f2f2f2;">KAIA 家居選物&nbsp;&nbsp;統一編號:00000000</div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
     <script>
-        let pay_cash = document.querySelector('#pay_cash');
-        let pay_card = document.querySelector('#pay_card');
-        let pay_atm = document.querySelector('#pay_atm');
-        pay_cash.addEventListener('click',function(){
-            console.log('貨到付款');
+        let pay_check = document.querySelector('#pay_check');
+        let pay = [{ '貨到付款': '貨到付款', '信用卡': '信用卡', 'ATM網路轉帳': 'ATM網路轉帳', }
+        ];
+        pay.forEach((item, index) => {
+            pay_check.innerHTML += `
+            <div id="pay_check" class='mb-4'>
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">${item.貨到付款}</label>
+            </div>
+            <div id="pay_check" class='mb-4'>
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">${item.信用卡}</label>
+            </div>
+            <div id="pay_check" class='mb-4'>
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">${item.ATM網路轉帳}</label>
+            </div>`;
+            console.log(item);
         });
-        pay_card.addEventListener('click',function(){
-            console.log('信用卡付款');
-        });
-        pay_atm.addEventListener('click',function(){
-            console.log('網路ATM');
+
+
+        let transport_check = document.querySelector('#transport_check');
+        let transport = [{'黑貓宅配':'黑貓宅配','全家超商':'全家超商','711':'711超商',}];
+        transport.forEach((item) => {
+            transport_check.innerHTML += `
+            <div id="transport_check" class="form-check py-3">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1"> ${item.黑貓宅配}</label>
+            </div>
+            <div id="transport_check" class="form-check py-3">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1"> ${item.全家超商}</label>
+            </div>
+            `;
+            transport_check.addEventListener('click', function () {
+                if (item.value == '黑貓宅配') {
+                    console.log('黑貓宅配');
+                } else if (item == '711超商') {
+                    console.log('711超商');
+                }else if (item == '全家超商'){
+                    console.log('全家超商');
+                }
+            });
+            console.log(transport);
         });
     </script>
 </body>
