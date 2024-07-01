@@ -11,12 +11,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <style>
-    body {
-        background-color: #eee1d1;
-        background-image: url(./img/下載\ \(9\).jpg);
-        background-size: cover;
-    }
-
     a {
         text-decoration: none;
     }
@@ -30,12 +24,10 @@
         padding: 6px;
     }
 
-    .my-navbar {
-        background-color: #3d513a;
-    }
-
-    .my-navbar-text {
-        color: #eee1d1;
+    @media (max-width: 992px) {
+        .navbar-nav li{
+            width: 100%;
+        }
     }
 
     .my-svg-car {
@@ -70,25 +62,18 @@
     }
 
     @media (max-width: 1200px) {
-        .my-progress{
+        .my-progress {
             width: 60%;
             right: -30%;
             top: 8px;
         }
-        .my-step-1{
+
+        .my-step-1 {
             width: 30px;
             height: 30px;
             font-size: 18px;
             line-height: 30px;
         }
-    }
-
-    .my-progress-bar {
-        background-color: #f5c6b5;
-    }
-
-    .my-card-btn {
-        color: #3d513a;
     }
 
     .my-card-btn :hover {
@@ -100,17 +85,8 @@
         border-color: #c1cb5b;
     }
 
-    .my-footer {
-        /* background-color: #f2f2f2; */
-        background-color: #fffcf8;
-    }
-
-    .my-footer-end {
-        background-color: #3d513a;
-        color: #f2f2f2;
-    }
     @media (max-width: 768px) {
-        .my-footer-item{
+        .my-footer-item {
             text-align: center;
         }
     }
@@ -118,24 +94,24 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg px-3 my-navbar">
+        <nav class="navbar navbar-expand-lg px-3" style="background-color: #3d513a;">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#"><img src="./img/logo-pink-2.png" style="height: 50px;" alt=""></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" style="background-color: #f5c6b5;box-shadow: none;" data-bs-target="#navbarScroll"
-                    aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation" >
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    style="background-color: #f5c6b5;box-shadow: none;" data-bs-target="#navbarScroll"
+                    aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarScroll">
-                    <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll align-items-center"
-                        style="--bs-scroll-height: 100px;">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0 align-items-start">
                         <li class="nav-item">
-                            <a class="nav-link my-navbar-text" href="#">Home</a>
+                            <a class="nav-link" style="color: #eee1d1;" href="./shop-home.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link my-navbar-text" href="#">About</a>
+                            <a class="nav-link" style="color: #eee1d1;" href="#">About</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle my-navbar-text" href="#" role="button"
+                            <a class="nav-link dropdown-toggle" style="color: #eee1d1;" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 所有商品
                             </a>
@@ -154,12 +130,12 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link my-navbar-text bi bi-cart-fill" href="#">
+                            <a class="nav-link bi bi-cart-fill" style="color: #eee1d1;" href="./shop-p1.html">
                                 購物車
                             </a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle my-navbar-text bi bi-person-circle" href="#"
+                            <a class="nav-link dropdown-toggle bi bi-person-circle" style="color: #eee1d1;" href="#"
                                 role="button" data-bs-toggle="dropdown" aria-expanded="false">&nbsp;</a>
                             <ul class="dropdown-menu dropdown-menu-end">
                                 <li><a class="dropdown-item bi bi-heart-fill" href="#">&nbsp;心願單</a></li>
@@ -167,7 +143,7 @@
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item bi bi-person-circle" href="#">&nbsp;登入/註冊</a></li>
+                                <li><a class="dropdown-item bi bi-person-circle" href="./shop-login.html">&nbsp;登入/註冊</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -175,9 +151,9 @@
             </div>
         </nav>
     </header>
-    <main>
-        <div class="card mx-auto my-5 shadow-lg" style="width: 75%;">
-            <div class="card-body p-5">
+    <main class="p-3" style="background-image: url(./img/下載\ \(9\).jpg);background-size: cover;">
+        <div class="card my-5 shadow-lg container-lg">
+            <div class="card-body p-4">
                 <h2 class="card-title">購物車</h2>
                 <div class="row py-5 px-2 md-px-0">
                     <div class="col text-center align-items-center my-step">
@@ -185,7 +161,7 @@
                         <div class="col">確認購物車</div>
                         <div class="progress my-progress" role="progressbar" aria-label="Basic example"
                             aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar my-progress-bar" style="width: 100%"></div>
+                            <div class="progress-bar" style="width: 40%;background-color: #f5c6b5;"></div>
                         </div>
                     </div>
                     <div class="col text-center align-items-center my-step">
@@ -193,7 +169,7 @@
                         <div class="col">付款與運送方式</div>
                         <div class="progress my-progress" role="progressbar" aria-label="Basic example"
                             aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar my-progress-bar" style="width: 40%"></div>
+                            <div class="progress-bar" style="width: 0%;background-color: #f5c6b5;"></div>
                         </div>
                     </div>
                     <div class="col text-center align-items-center my-step">
@@ -201,7 +177,7 @@
                         <div class="col">填寫資料</div>
                         <div class="progress my-progress" role="progressbar" aria-label="Basic example"
                             aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar my-progress-bar" style="width: 0%"></div>
+                            <div class="progress-bar" style="width: 0%;background-color: #f5c6b5;"></div>
                         </div>
                     </div>
                     <div class="col text-center align-items-center my-step">
@@ -209,74 +185,79 @@
                         <div class="col">完成訂購</div>
                     </div>
                 </div>
+                <hr>
                 <p class="card-text">
-                    <h4 class="card-title">付款方式</h4>
-                    <div class="container text-start p-3">
-                        <div class="form-check py-3">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                            <label class="form-check-label" for="flexRadioDefault1">
-                                信用卡付款
-                            </label>
+                <h4 class="card-title mb-4">訂單明細</h4>
+                <div class="container text-start p-0">
+                    <div class="col align-items-center">
+                        <div class="row align-items-center">
+                            <div class="col-auto">
+                                <img src="./img/桌鐘遊戲機5.png" class="my-product-img rounded" alt="">
+                            </div>
+                            <div class="col mb-0">
+                                <p class="col mb-0 " alt="">遊戲機鬧鐘計時器
+                                </p>
+                                <p class="col mb-0 " alt="">#10234</p>
+                            </div>
+                            <p class="col-auto text-end mb-0" alt="">$890</p>
                         </div>
-                        <div class="form-check py-3">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                            <label class="form-check-label" for="flexRadioDefault1">
-                                網路ATM
-                            </label>
+                        <hr>
+                        <div class="row align-items-center">
+                            <div class="col-auto">
+                                <img src="./img/桌鏡.jpg" class="my-product-img rounded" alt="">
+                            </div>
+                            <div class="col mb-0">
+                                <p class="col mb-0 " alt="">奶油風圓形化妝鏡
+                                </p>
+                                <p class="col mb-0 " alt="">#15302</p>
+                            </div>
+                            <p class="col-auto text-end mb-0" alt="">$490</p>
                         </div>
-                        <div class="form-check py-3">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                            <label class="form-check-label" for="flexRadioDefault1">
-                                信用卡付款
-                            </label>
+                        <hr>
+                        <div class="row align-items-center">
+                            <div class="col-auto">
+                                <img src="./img/桌燈白-2.jpg" class="my-product-img rounded" alt="">
+                            </div>
+                            <div class="col mb-0">
+                                <p class="col mb-0 " alt="">雲朵氛圍桌燈
+                                </p>
+                                <p class="col mb-0 " alt="">#13560</p>
+                            </div>
+                            <p class="col-auto text-end mb-0" alt="">$1,080</p>
                         </div>
+                        <hr>
                     </div>
-                    <hr>
-                    <p class="card-text">
-                    <h4 class="card-title">運送方式</h4>
-                    <div class="container text-start p-3">
-                        <div class="form-check py-3">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                            <label class="form-check-label" for="flexRadioDefault1">
-                                黑貓宅配
-                            </label>
-                        </div>
-                        <div class="form-check py-3">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                            <label class="form-check-label" for="flexRadioDefault1">
-                                711/全家超商
-                            </label>
-                        </div>
-                    </div>
+                </div>
                 <div class="row justify-content-end align-items-center mx-0 py-3">
-                    <div class="col-auto gx-5 px-5">
+                    <div class="col-6 col-sm-auto">
                         <p class="col text-body-tertiary">數量:</p>
                         <p class="col text-body-tertiary">小計:</p>
                         <p class="col text-body-tertiary">運費:</p>
                         <p class="col text-body-tertiary">總計:</p>
                     </div>
-                    <div class="col-2 pr-0 text-end px-0">
+                    <div class="col-6 col-sm-3 text-end px-0">
                         <p class="col">3</p>
                         <p class="col">$2,460</p>
                         <p class="col">$80</p>
                         <p class="col">$2,540</p>
                     </div>
                 </div>
-                <div class="row justify-content-between align-items-center mx-0">
-                    <a class="col-auto my-card-btn" href="./shop-p1.html">
+                <div class="row justify-content-center justify-content-sm-between align-items-center mx-0 gap-3">
+                    <a class="col-auto my-card-btn" style="color: #3d513a;" href="./shop-home.html">
                         <i class="bi bi-arrow-left">
-                            <span>返回購物車</span></i>
+                            <span>返回購物</span></i>
                     </a>
-                    <a href="./shop-p3.html" class="col-auto btn btn-success px-5">下一步</a>
+                    <a href="./shop-p2-2版.html" class="col-auto btn btn-success px-5">下一步</a>
                 </div>
             </div>
         </div>
     </main>
     <footer class="col">
-        <div class="row row-cols-xl-5 row-cols-1 p-5 m-0 gap-3 justify-content-md-around my-footer">
+        <div class="row row-cols-xl-5 row-cols-1 p-5 m-0 gap-3 justify-content-md-around"
+            style="background-color: #fffcf8;">
             <a class="col row col-xl-auto col-12  justify-content-center mx-0 px-0 mb-5">
                 <div class="col-auto "><img src="./img/253822.png" alt="" style="height: 110px;"></div>
-                <ul class="col-auto navbar-nav" style="color: #3d513a;font-size: 12px;">
+                <ul class="col-auto navbar-nav px-3" style="color: #3d513a;font-size: 12px;">
                     <li class="nav-item">
                         <p>服務時間｜週一至週五 10:00-18:00</p>
                     </li>
@@ -338,7 +319,7 @@
             </ul>
 
         </div>
-        <div class="col my-footer-end p-3">KAIA 家居選物&nbsp;&nbsp;統一編號:00000000</div>
+        <div class="col p-3" style="background-color: #3d513a;color: #f2f2f2;">KAIA 家居選物&nbsp;&nbsp;統一編號:00000000</div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

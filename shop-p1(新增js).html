@@ -195,63 +195,24 @@
                     <p class="col-2">小計</p>
                 </div>
                 <div class="container-lg text-start p-0 mx-0">
-                    <div class="col align-items-center px-0">
-                        <div class="row align-items-center px-0 m-0">
+                    <div id="cartlist" class="col align-items-center px-0">
+                        <!-- <div class="row align-items-center px-0 m-0">
                             <div class="col-auto">
-                                <img src="./img/邊桌-方.png" class="my-product-img rounded" alt="">
-                            </div>
-                            <!-- <img src="" id="pro_img_show" class="col-auto p-0 my-product-img rounded" alt="" > -->
-                            <div class="col mb-0">
-                                <div id="product_show" class="col mb-0" alt=""></div>
-                            </div>
-                            <div class="col-auto col-md-2 mb-0 p-0">
-                                <button type="button" id="dash_btn" class="btn bi bi-dash-square-fill"
-                                    style="font-size: 20px; color:#c1cb5b"></button>
-                                <span id="show_amount"></span>
-                                <button type="button" id="plus_btn" class="btn bi bi-plus-square-fill"
-                                    style="font-size: 20px; color:#c1cb5b"></button>
-                            </div>
-                            <p id="subtotal_show" class="col-auto col-sm-2 mb-0" alt=""></p>
-                        </div>
-                        <hr>
-                        <!-- <div class="row align-items-center">
-                            <div class="col-auto">
-                                <img src="./img/桌鏡.jpg" class="my-product-img rounded" alt="">
+                                <img src="./img/邊桌-方.png" class="product-img my-product-img rounded" alt="">
                             </div>
                             <div class="col mb-0">
-                                <p class="col mb-0 " alt="">奶油風圓形化妝鏡
-                                </p>
-                                <p class="col mb-0 " alt="">#15302</p>
-                                <p class="col mb-0" alt="">單價 : 490</p>
+                                <div class="product-name col mb-0" alt=""></div>
+                                <div class="product-id col mb-0" alt=""></div>
+                                <div class="product-price col mb-0" alt=""></div>
                             </div>
                             <div class="col-auto col-md-2 mb-0 p-0">
-                                <button type="button" class="btn bi bi-dash-square-fill"
+                                <button type="button" class="dash_btn btn bi bi-dash-square-fill"
                                     style="font-size: 20px; color:#c1cb5b"></button>
-                                <span>1</span>
-                                <button type="button" class="btn bi bi-plus-square-fill"
-                                    style="font-size: 20px; color:#c1cb5b"></button>
-                            </div>
-                            <p class="col-auto col-sm-2 mb-0" alt="">490</p>
-                        </div>
-                        <hr>
-                        <div class="row align-items-center">
-                            <div class="col-auto">
-                                <img src="./img/桌燈白-2.jpg" class="my-product-img rounded" alt="">
-                            </div>
-                            <div class="col mb-0">
-                                <p class="col mb-0 " alt="">雲朵氛圍桌燈
-                                </p>
-                                <p class="col mb-0 " alt="">#13560</p>
-                                <p class="col mb-0" alt="">單價 : 1,080</p>
-                            </div>
-                            <div class="col-auto col-md-2 mb-0 p-0">
-                                <button type="button" class="btn bi bi-dash-square-fill"
-                                    style="font-size: 20px; color:#c1cb5b"></button>
-                                <span>1</span>
-                                <button type="button" class="btn bi bi-plus-square-fill"
+                                <span class="amount_show"></span>
+                                <button type="button" class="plus_btn btn bi bi-plus-square-fill"
                                     style="font-size: 20px; color:#c1cb5b"></button>
                             </div>
-                            <p class="col-auto col-sm-2 mb-0" alt="">1,080</p>
+                            <p class="subtotal_show col-auto col-sm-2 mb-0" alt=""></p>
                         </div>
                         <hr> -->
                     </div>
@@ -348,96 +309,167 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
         </script>
     <script>
-        let product01 = [
-            { 'img': '', 'name': '橢圓客廳沙發邊桌', 'item_num': '10234', 'unit_price': '1390', },
+        let shop_all_products = [
+            {
+                id: '0001',
+                img: './img/邊桌.png',
+                brand: '韓國Woodray',
+                name: '橢圓客廳沙發邊桌',
+                text: '採用優質材料製成，注重細節，簡約設計與幾何輪廓，輕鬆融入各種空間，為任何空間增添了溫暖和個性。',
+                price: '1390',
+            },
+            {
+                id: '0002',
+                img: './img/杯墊.png',
+                brand: 'MAMANAUBE',
+                name: 'Le café du matin杯墊',
+                text: '',
+                price: '170',
+            },
+            {
+                id: '0003',
+                img: './img/杯.png',
+                brand: 'Same.d',
+                name: 'Paris mug馬克杯',
+                text: '',
+                price: '480',
+            },
+            {
+                id: '0004',
+                img: './img/小木櫃.png',
+                brand: 'kaia',
+                name: '閣樓上的木頭收納櫃',
+                text: '',
+                price: '1280',
+            },
+            {
+                id: '0005',
+                img: './img/鐘檸黃.png',
+                brand: 'Liberte',
+                name: '復古造型時鐘',
+                text: '',
+                price: '1480',
+            },
         ];
-        product01[0].src = './img/邊桌-方.png';
-        let product_show = document.querySelector('#product_show');
-        let pro_img_show = document.querySelector('#pro_img_show');
-        product01.forEach((item) => {
-            product_show.innerHTML += `
-            <div class="col mb-0">
-                <div id="product_show" class="col mb-0" alt=""> ${item.name} </div>
-                <div id="product_show" class="col mb-0" alt=""> # ${item.item_num} </div>
-                <div id="product_show" class="col mb-0" alt=""> 單價 : ${item.unit_price} </div>
-            </div>`;
-            console.log(product_show);
+        console.log('商品清單', shop_all_products);
+
+        //取出暫存資料
+        let stepshopping = JSON.parse(localStorage.getItem('stepshopping'));
+        console.log(stepshopping);
+
+        //過濾要顯示的商品
+        const result = shop_all_products.filter((item, index) => {
+            if (stepshopping.includes(index)) {
+                return item;
+            }
         });
+        console.log(result);
 
-        // let product02 = [
-        //     { 'name': '客廳沙發邊桌', 'item_num': '10234', 'unit_price': '1390', },
-        // ];
-        // product02.forEach((item) => {
-        //     product_show.innerHTML += `
-        //     <div class="col mb-0">
-        //         <div id="product_show" class="col mb-0" alt=""> ${item.name} </div>
-        //         <div id="product_show" class="col mb-0" alt=""> # ${item.item_num} </div>
-        //         <div id="product_show" class="col mb-0" alt=""> 單價 : ${item.unit_price} </div>
-        //     </div>`;
-        //     console.log(product_show);
-        // });
         // 數量編輯按鈕
-        let plus_btn = document.querySelector('#plus_btn');
-        let dash_btn = document.querySelector('#dash_btn');
+        let plus_btn = document.querySelectorAll('.plus_btn');
+        let dash_btn = document.querySelectorAll('.dash_btn');
+        let amount_show = document.querySelectorAll('.amount_show');
         let amount = 1;
-        show_amount.innerHTML = 'amount';
-        amount_show();
 
-        function amount_show() {
-            console.log(amount);
-            let show_amount = document.querySelector('#show_amount')
-            show_amount.innerHTML = '';
-            show_amount.innerHTML += `<span id="show_amount"> ${amount} </span>`;
-            //小計計算
-            product01.forEach((item) => {
-                let price = item.unit_price;
-                console.log(price * amount);
-                let subtotal_show = document.querySelector('#subtotal_show');
-                subtotal_show.innerHTML = '';
+        let cartlist = document.querySelector('#cartlist');
+        result.forEach((item) => {
+            console.log(item.name);
+            cartlist.innerHTML += `
+            <div class="row align-items-center px-0 m-0">
+                <div class="col-auto">
+                    <img src="${item.img}" class="product-img my-product-img rounded" alt="">
+                </div>
+                <div class="col mb-0">
+                    <div class="product-name col mb-0" alt="">${item.name}</div>
+                    <div class="product-id col mb-0" alt=""> # ${item.id}</div>
+                    <div class="product-price col mb-0" alt="">$${item.price}</div>
+                </div>
+                <div class="col-auto col-md-2 mb-0 p-0">
+                    <button type="button" class="dash_btn btn bi bi-dash-square-fill"
+                                    style="font-size: 20px; color:#c1cb5b"></button>
+                    <span class="amount_show">${amount}</span>
+                    <button type="button" class="plus_btn btn bi bi-plus-square-fill"
+                                    style="font-size: 20px; color:#c1cb5b"></button>
+                </div>
+                <p class="subtotal_show col-auto col-sm-2 mb-0" alt=""> $${item.price * 1}</p>
+            </div>
+            <hr>
+            `;
+        });
+        amount_edit();
+
+        function amount_edit() {
+            result.forEach((item) => {
+                let amount = 1;
+                console.log(amount);
+                let amount_show = document.querySelectorAll('.amount_show');
+                amount_show.innerHTML += `
+                <span class="amount_show">${amount}</span>
+                `;
+
+                let subtotal = item.price;
+                console.log(subtotal * amount);
+                let subtotal_show = document.querySelectorAll('.subtotal_show');
                 subtotal_show.innerHTML += `
-                <p id="subtotal_show"> ${price * amount} </p>`;
-                console.log(subtotal_show);
+                <p class="subtotal_show col-auto col-sm-2 mb-0" alt=""> $${subtotal}</p>
+                `;
+
                 // 總計
-                let total_show = document.querySelector('#total_show');
-                console.log(total_show);
-                total_show.innerHTML = '';
-                total_show.innerHTML += `
-                <p id="total_show"> ${amount}</p>
-                <p id="total_show"> ${price * amount}</p>`;
-                let total = price * amount;
-                console.log('總計', total);
-                // 總計金額暫存紀錄
-                localStorage.setItem('總計', total.toString());
-                console.log('localStorage', localStorage);
-                console.log(localStorage.getItem('總計'));
-                let local_total = localStorage.getItem('總計');
-                console.log('從暫存取得出來的', local_total);
-                console.log('轉化成陣列', local_total.split(','));
+                // let total_show = document.querySelector('#total_show');
+                // console.log(total_show);
+                // total_show.innerHTML = '';
+                // total_show.innerHTML += `
+                // <p id="total_show"> ${amount}</p>
+                // <p id="total_show"> ${price * amount}</p>`;
+                // let total = price * amount;
+                // console.log('總計', total);
+                // // 總計金額暫存紀錄
+                // localStorage.setItem('總計', total.toString());
+                // console.log('localStorage', localStorage);
+                // console.log(localStorage.getItem('總計'));
+                // let local_total = localStorage.getItem('總計');
+                // console.log('從暫存取得出來的', local_total);
+                // console.log('轉化成陣列', local_total.split(','));
             });
-            // 總計數量暫存紀錄
-            localStorage.setItem('數量', amount.toString());
-            console.log('localStorage', localStorage);
-            console.log(localStorage.getItem('數量'));
-            let local_amount = localStorage.getItem('數量');
-            console.log('從暫存取得出來的', local_amount);
-            console.log('轉化成陣列', local_amount.split(','));
+            //     // 總計數量暫存紀錄
+            //     localStorage.setItem('數量', amount.toString());
+            //     console.log('localStorage', localStorage);
+            //     console.log(localStorage.getItem('數量'));
+            //     let local_amount = localStorage.getItem('數量');
+            //     console.log('從暫存取得出來的', local_amount);
+            //     console.log('轉化成陣列', local_amount.split(','));
 
 
 
         };
+        cartlistedit()
+        function cartlistedit() {
+            let plus_btn = document.querySelectorAll('.plus_btn');
+            let dash_btn = document.querySelectorAll('.dash_btn');
+            let amount_show = document.querySelectorAll('.amount_show');
 
-        plus_btn.addEventListener('click', function () {
-            amount++;
-            amount_show()
-        });
-        dash_btn.addEventListener('click', function () {
-            if (amount <= 1) {
-                return;
-            } else {
-                amount--;
-            }
-            amount_show();
-        });
+            plus_btn.forEach((item, index) => {
+                item.addEventListener('click', function () {
+                    let amount_num = amount_show[index];
+
+                    console.log('有');
+                    console.log(amount_num.value);
+                    amount++;
+                    amount_edit();
+                });
+            });
+        };
+
+
+
+        // dash_btn.addEventListener('click', function () {
+        //     if (amount <= 1) {
+        //         return;
+        //     } else {
+        //         amount--;
+        //     }
+        //     amount_edit();
+        // });
 
 
     </script>
