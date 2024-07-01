@@ -349,7 +349,7 @@
         </script>
     <script>
         let product01 = [
-            { 'img': '','name': '橢圓客廳沙發邊桌', 'item_num': '10234', 'unit_price': '1390', },
+            { 'img': '', 'name': '橢圓客廳沙發邊桌', 'item_num': '10234', 'unit_price': '1390', },
         ];
         product01[0].src = './img/邊桌-方.png';
         let product_show = document.querySelector('#product_show');
@@ -404,7 +404,26 @@
                 total_show.innerHTML += `
                 <p id="total_show"> ${amount}</p>
                 <p id="total_show"> ${price * amount}</p>`;
+                let total = price * amount;
+                console.log('總計', total);
+                // 總計金額暫存紀錄
+                localStorage.setItem('總計', total.toString());
+                console.log('localStorage', localStorage);
+                console.log(localStorage.getItem('總計'));
+                let local_total = localStorage.getItem('總計');
+                console.log('從暫存取得出來的', local_total);
+                console.log('轉化成陣列', local_total.split(','));
             });
+            // 總計數量暫存紀錄
+            localStorage.setItem('數量', amount.toString());
+            console.log('localStorage', localStorage);
+            console.log(localStorage.getItem('數量'));
+            let local_amount = localStorage.getItem('數量');
+            console.log('從暫存取得出來的', local_amount);
+            console.log('轉化成陣列', local_amount.split(','));
+
+
+
         };
 
         plus_btn.addEventListener('click', function () {
@@ -419,6 +438,7 @@
             }
             amount_show();
         });
+
 
     </script>
 </body>
