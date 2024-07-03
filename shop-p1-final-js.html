@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KAIA Select Shop</title>
+    <link rel="icon" href="./img/253822 - 複製.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<style>
+    a {
+        text-decoration: none;
+    }
+
+    i {
+        font-style: normal;
+    }
+
+    p {
+        margin: 0;
+        padding: 6px;
+    }
+
+    @media (max-width: 992px) {
+        .navbar-nav li {
+            width: 100%;
+        }
+    }
+
+    .my-svg-car {
+        width: 20px;
+        height: 20px;
+    }
+
+    .my-product-img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .my-step-1 {
+        width: 50px;
+        height: 50px;
+        background-color: #c1cb5b;
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 50px;
+        color: #ffffff;
+    }
+
+    .my-step {
+        position: relative;
+    }
+
+    .my-progress {
+        width: 70%;
+        position: absolute;
+        top: 18px;
+        right: -35%;
+    }
+
+    @media (max-width: 1200px) {
+        .my-progress {
+            width: 60%;
+            right: -30%;
+            top: 8px;
+        }
+
+        .my-step-1 {
+            width: 30px;
+            height: 30px;
+            font-size: 18px;
+            line-height: 30px;
+        }
+    }
+
+    .my-card-btn :hover {
+        color: #c1cb5b;
+    }
+
+    .btn-success {
+        background-color: #c1cb5b;
+        border-color: #c1cb5b;
+    }
+
+    @media (max-width: 768px) {
+        .my-footer-item {
+            text-align: center;
+        }
+    }
+</style>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg px-3" style="background-color: #3d513a;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="./img/logo-pink-2.png" style="height: 50px;" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    style="background-color: #f5c6b5;box-shadow: none;" data-bs-target="#navbarScroll"
+                    aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0 align-items-start">
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: #eee1d1;" href="./shop-home-final-js.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: #eee1d1;" href="#">About</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" style="color: #eee1d1;" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                所有商品
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item bg-body-secondary" href="#">居家裝飾</a></li>
+                                <li><a class="dropdown-item" href="#">蠟燭│擴香</a></li>
+                                <li><a class="dropdown-item" href="#">燈飾│鏡子</a></li>
+                                <li><a class="dropdown-item" href="#">牆面掛飾</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item bg-body-secondary" href="#">品牌選物</a></li>
+                                <li><a class="dropdown-item" href="#">SYRACUSE</a></li>
+                                <li><a class="dropdown-item" href="#">MAMANAUBE</a></li>
+                                <li><a class="dropdown-item" href="#">Woothic</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link bi bi-cart-fill" style="color: #eee1d1;" href="./shop-p1-final-js.html">
+                                購物車
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle bi bi-person-circle" style="color: #eee1d1;" href="#"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">&nbsp;</a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item bi bi-heart-fill" href="#">&nbsp;心願單</a></li>
+                                <li><a class="dropdown-item bi bi-bag-check-fill" href="#">&nbsp;我的訂單</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item bi bi-person-circle"
+                                        href="./shop-login.html">&nbsp;登入/註冊</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="p-3" style="background-image: url(./img/下載\ \(9\).jpg);background-size: cover;">
+        <div class="card my-5 shadow-lg container-lg">
+            <div class="card-body p-4">
+                <h2 class="card-title">購物車</h2>
+                <div class="row py-5 px-2 md-px-0">
+                    <div class="col text-center align-items-center my-step">
+                        <div class="col-auto my-step-1 rounded-circle mx-auto mb-3">1</div>
+                        <div class="col">確認購物車</div>
+                        <div class="progress my-progress" role="progressbar" aria-label="Basic example"
+                            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar" style="width: 40%;background-color: #f5c6b5;"></div>
+                        </div>
+                    </div>
+                    <div class="col text-center align-items-center my-step">
+                        <div class="col-auto my-step-1 rounded-circle mx-auto mb-3 ">2</div>
+                        <div class="col">付款與運送方式</div>
+                        <div class="progress my-progress" role="progressbar" aria-label="Basic example"
+                            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar" style="width: 0%;background-color: #f5c6b5;"></div>
+                        </div>
+                    </div>
+                    <div class="col text-center align-items-center my-step">
+                        <div class="col-auto my-step-1 rounded-circle mx-auto mb-3 ">3</div>
+                        <div class="col">填寫資料</div>
+                        <div class="progress my-progress" role="progressbar" aria-label="Basic example"
+                            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar" style="width: 0%;background-color: #f5c6b5;"></div>
+                        </div>
+                    </div>
+                    <div class="col text-center align-items-center my-step">
+                        <div class="col-auto my-step-1 rounded-circle mx-auto mb-3 ">4</div>
+                        <div class="col">完成訂購</div>
+                    </div>
+                </div>
+                <hr>
+                <h4 class="col card-title">訂單明細</h4>
+                <hr>
+                <div class="row align-items-center mb-4">
+                    <p class="col">商品資訊</p>
+                    <p class="col-2">數量</p>
+                    <p class="col-2">小計</p>
+                </div>
+                <div class="container-lg text-start p-0 mx-0">
+                    <div id="cartlist" class="col align-items-center px-0">
+                        <!-- <div class="row align-items-center px-0 m-0">
+                            <div class="col-auto">
+                                <img src="./img/邊桌-方.png" class="product-img my-product-img rounded" alt="">
+                            </div>
+                            <div class="col mb-0">
+                                <div class="product-name col mb-0" alt=""></div>
+                                <div class="product-id col mb-0" alt=""></div>
+                                <div class="product-price col mb-0" alt=""></div>
+                            </div>
+                            <div class="col-auto col-md-2 mb-0 p-0">
+                                <button type="button" class="dash_btn btn bi bi-dash-square-fill"
+                                    style="font-size: 20px; color:#c1cb5b"></button>
+                                <input type="number"  value='1' min='1' class="amount_show" ></input>
+                                <button type="button"  class="plus_btn btn bi bi-plus-square-fill"
+                                    style="font-size: 20px; color:#c1cb5b"></button>
+                            </div>
+                            <p class="subtotal_show col-auto col-sm-2 mb-0" alt=""></p>
+                        </div>
+                        <hr> -->
+                    </div>
+                </div>
+                <div class="row justify-content-end align-items-center mx-0 py-3">
+                    <div class="col-6 col-sm-auto">
+                        <p class="col text-body-tertiary">數量:</p>
+                        <p class="col text-body-tertiary">總計:</p>
+                    </div>
+                    <div class="col-6 col-sm-3 text-end px-0">
+                        <p id="amount_total_show" class="col"></p>
+                        <p id="total_show" class="col"></p>
+                    </div>
+                </div>
+                <div class="row justify-content-center justify-content-sm-between align-items-center mx-0 gap-3">
+                    <a class="col-auto my-card-btn" style="color: #3d513a;" href="./shop-home-final-js.html">
+                        <i class="bi bi-arrow-left">
+                            <span>返回購物</span></i>
+                    </a>
+                    <a href="./shop-p2-final-js.html" class="col-auto btn btn-success px-5">下一步</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="col">
+        <div class="row row-cols-xl-5 row-cols-1 p-5 m-0 gap-3 justify-content-md-around"
+            style="background-color: #fffcf8;">
+            <a class="col row col-xl-auto col-12  justify-content-center mx-0 px-0 mb-5">
+                <div class="col-auto "><img src="./img/253822.png" alt="" style="height: 110px;"></div>
+                <ul class="col-auto navbar-nav px-3" style="color: #3d513a;font-size: 12px;">
+                    <li class="nav-item">
+                        <p>服務時間｜週一至週五 10:00-18:00</p>
+                    </li>
+                    <li class="nav-item">
+                        <p>E-mail｜service@kaiaselect.com</p>
+                    </li>
+                    <li class="nav-item">
+                        <p>聯絡地址:台中市東區進德路600號</p>
+                    </li>
+                </ul>
+            </a>
+            <ul class="col col-xl-auto col-md-2 navbar-nav px-2 mb-4 my-footer-item">
+                <h5 class="pb-2">關於我們</h5>
+                <li class="nav-item">
+                    <a class="nav-link py-1" href="#">品牌故事</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link py-1" href="#">最新公告</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link py-1" href="#">購物須知</a>
+                </li>
+            </ul>
+            <ul class="col col-xl-auto col-md-2 navbar-nav px-2 mb-4 my-footer-item">
+                <h5 class="pb-2">會員服務</h5>
+                <li class="nav-item">
+                    <a class="nav-link py-1" href="#">訂單查詢</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link py-1" href="#">退換貨服務</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link py-1" href="#">隱私權政策</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link py-1" href="#">防詐騙提醒</a>
+                </li>
+            </ul>
+            <ul class="col col-xl-auto col-md-2 navbar-nav px-2 mb-4 my-footer-item">
+                <h5 class="pb-2">社群平台</h5>
+                <li class="nav-item">
+                    <a class="nav-link py-1 bi bi-facebook" href="#">&nbsp;Facebook</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link py-1 bi bi-instagram" href="#">&nbsp;Instagram</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link py-1 bi bi-line" href="#">&nbsp;LINE</a>
+                </li>
+            </ul>
+            <ul class="col col-xl-auto col-md-2 navbar-nav px-2 mb-4 my-footer-item">
+                <h5 class="pb-2">客服中心</h5>
+                <li class="nav-item">
+                    <a class="nav-link py-1" href="#">聯絡我們</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link py-1" href="#">常見問題</a>
+                </li>
+            </ul>
+
+        </div>
+        <div class="col p-3" style="background-color: #3d513a;color: #f2f2f2;">KAIA 家居選物&nbsp;&nbsp;統一編號:00000000</div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
+    <script>
+        let shop_all_products = [
+            {
+                id: '0001',
+                img: './img/邊桌.png',
+                brand: '韓國Woodray',
+                name: '橢圓客廳沙發邊桌',
+                text: '採用優質材料製成，注重細節，簡約設計與幾何輪廓，輕鬆融入各種空間，為任何空間增添了溫暖和個性。',
+                price: '1390',
+            },
+            {
+                id: '0002',
+                img: './img/杯墊.png',
+                brand: 'MAMANAUBE',
+                name: 'Le café du matin杯墊',
+                text: '',
+                price: '170',
+            },
+            {
+                id: '0003',
+                img: './img/杯.png',
+                brand: 'Same.d',
+                name: 'Paris mug馬克杯',
+                text: '',
+                price: '480',
+            },
+            {
+                id: '0004',
+                img: './img/小木櫃.png',
+                brand: 'kaia',
+                name: '閣樓上的木頭收納櫃',
+                text: '',
+                price: '1280',
+            },
+            {
+                id: '0005',
+                img: './img/鐘檸黃.png',
+                brand: 'Liberte',
+                name: '復古造型時鐘',
+                text: '',
+                price: '1480',
+            },
+            {
+                id: '0006',
+                img: './img/花毛巾-2.png',
+                brand: 'kaia',
+                name: '純棉花朵毛巾',
+                text: '',
+                price: '280',
+            },
+            {
+                id: '0007',
+                img: './img/枕套多色.jpg',
+                brand: 'kaia',
+                name: '個性格紋枕套',
+                text: '',
+                price: '390',
+            },
+            {
+                id: '0008',
+                img: './img/英字地毯.png',
+                brand: '韓國選品',
+                name: 'Script Letteting腳踏墊',
+                text: '',
+                price: '590',
+            },
+            {
+                id: '0009',
+                img: './img/桌鏡.jpg',
+                brand: '韓國選品',
+                name: '奶油色化妝鏡',
+                text: '',
+                price: '890',
+            },
+        ];
+        console.log('商品清單', shop_all_products);
+
+        //取出暫存資料
+        let stepshopping = JSON.parse(localStorage.getItem('stepshopping'));
+        console.log(stepshopping);
+
+        //過濾要顯示的商品
+        const result = shop_all_products.filter((item, index) => {
+            if (stepshopping.includes(index)) {
+                return item;
+            }
+        });
+        console.log(result);
+
+        let cartlist = document.querySelector('#cartlist');
+        result.forEach((item) => {
+            console.log(item.name);
+            cartlist.innerHTML += `
+            <div class="row align-items-center px-0 m-0">
+                <div class="col-auto">
+                    <img src="${item.img}" class="product-img my-product-img rounded" alt="">
+                </div>
+                <div class="col mb-0">
+                    <div class="product-name col mb-0" alt="">${item.name}</div>
+                    <div class="product-id col mb-0" alt=""> # ${item.id}</div>
+                    <div class="product-price col mb-0" alt="">$${item.price}</div>
+                </div>
+                <div class="col-auto mb-0 p-0">
+                    <button type="button" class="dash_btn btn bi bi-dash-square-fill"
+                                    style="font-size: 20px; color:#c1cb5b"></button>
+                    <input type="number" min="1" value='1' class="amount_show" style="width:50px" ></input>
+                    <button type="button" class="plus_btn btn bi bi-plus-square-fill"
+                                    style="font-size: 20px; color:#c1cb5b"></button>
+                </div>
+                <p class="subtotal_show col-auto col-sm-2 mb-0" alt="" data-price="${item.price}" > $${item.price * 1}</p>
+            </div>
+            <hr>
+            `;
+        });
+
+        // function cartlistedit() {
+        //     let plus_btn = document.querySelector('.plus_btn');
+        //     let dash_btn = document.querySelector('.dash_btn');
+
+        //     plus_btn.addEventListener('click', function () {
+        //         let amount_show = document.querySelector('.amount_show');
+        //         amount_show.value = parseInt(amount_show.value) + 1;
+        //         // console.log(amount_show.value);
+        //         amount_show.innerHTML += `
+        //         <span class="amount_show">${amount_show.value}</span>
+        //         `;
+        //         let subtotal_show = document.querySelector('.subtotal_show');
+        //         console.log(amount_show.value * subtotal_show.dataset.price);
+        //         let subtotal = parseInt(amount_show.value)  * subtotal_show.dataset.price;
+        //         subtotal_show.innerHTML = `
+        //         <p class="subtotal_show"> $${subtotal}</p>
+        //         `;
+        //     });
+        //     dash_btn.addEventListener('click', function () {
+        //         let amount_show = document.querySelector('.amount_show');
+        //         amount_show.value = parseInt(amount_show.value) - 1;
+        //         // console.log(amount_show.value);
+        //         amount_show.innerHTML += `
+        //         <span class="amount_show">${amount_show.value}</span>
+        //         `;
+        //         let subtotal_show = document.querySelector('.subtotal_show');
+        //         console.log(amount_show.value * subtotal_show.dataset.price);
+        //         let subtotal = parseInt(amount_show.value)  * subtotal_show.dataset.price;
+        //         subtotal_show.innerHTML = `
+        //         <p class="subtotal_show"> $${subtotal}</p>
+        //         `;
+        //     });
+
+        // };
+
+        function amount_total() {
+            let amount_show = document.querySelectorAll('.amount_show');
+            amount = 0;
+            amount_show.forEach((item) => {
+                amount = amount + parseInt(item.value);
+                // console.log(parseInt(item.value));
+                let amount_total_show = document.querySelector('#amount_total_show')
+                amount_total_show.innerHTML = amount;
+            });
+        };
+
+        function price_total() {
+            let amount_show = document.querySelectorAll('.amount_show');
+            let subtotal_show = document.querySelectorAll('.subtotal_show');
+            price_tatal = 0;
+            amount_show.forEach((item, index) => {
+                let subtotal_num = subtotal_show[index];
+                price_tatal = price_tatal + parseInt(item.value) * parseInt(subtotal_num.dataset.price);
+                console.log(subtotal_num.dataset.price);
+                console.log(parseInt(subtotal_num.dataset.price));
+                console.log(price_tatal);
+                let total_show = document.querySelector('#total_show');
+                total_show.innerHTML = `$ ${price_tatal}`;
+            });
+        };
+
+        function carttemporary() {
+            let amount_arr = [];
+            let amount_show = document.querySelectorAll('.amount_show');
+            amount_show.forEach((item) => {
+                amount_arr.push(parseInt(item.value));
+            });
+            let JSON_shopamount = JSON.stringify(amount_arr);
+            localStorage.setItem("商品數量", JSON_shopamount);
+        };
+
+        function cartlistedit() {
+            let plus_btns = document.querySelectorAll('.plus_btn');
+            let dash_btns = document.querySelectorAll('.dash_btn');
+            let amount_show = document.querySelectorAll('.amount_show');
+            let subtotal_show = document.querySelectorAll('.subtotal_show');
+
+            plus_btns.forEach((item, index) => {
+                item.addEventListener('click', function () {
+                    let amounts = amount_show[index];
+                    amounts.value = parseInt(amounts.value) + 1;
+
+                    let subtotal = subtotal_show[index];
+                    // console.log(subtotal.dataset.price);
+                    let subtotal_result = parseInt(amounts.value) * parseInt(subtotal.dataset.price);
+                    subtotal.innerHTML = `
+                    <p class="subtotal_show"> $${subtotal_result}</p>
+                    `;
+                    
+                    //總金額計算
+                    price_tatal = 0;
+                    amount_show.forEach((item, index) => {
+                        let subtotal_num = subtotal_show[index];
+                        price_tatal = price_tatal + parseInt(item.value) * parseInt(subtotal_num.dataset.price);
+                        console.log(price_tatal);
+                        // console.log(price_tatal);
+                        let total_show = document.querySelector('#total_show');
+                        total_show.innerHTML = `$ ${price_tatal}`;
+                    });
+                    amount_total();
+                    // price_total();
+                    carttemporary();
+                    
+                });
+
+            });
+
+            dash_btns.forEach((item, index) => {
+                item.addEventListener('click', function () {
+                    let amounts = amount_show[index];
+                    amounts.value = parseInt(amounts.value) - 1;
+                    if (amounts.value = 1) {
+                        amounts.value = 1;
+                    }
+
+                    let subtotal = subtotal_show[index];
+                    let subtotal_result = parseInt(amounts.value) * parseInt(subtotal.dataset.price);
+                    subtotal.innerHTML = `
+                    <p class="subtotal_show"> $${subtotal_result}</p>
+                    `;
+                    
+                    //總金額計算
+                    price_tatal = 0;
+                    amount_show.forEach((item, index) => {
+                        let subtotal_num = subtotal_show[index];
+                        price_tatal = price_tatal + parseInt(item.value) * parseInt(subtotal_num.dataset.price);
+                        console.log(price_tatal);
+                        // console.log(price_tatal);
+                        let total_show = document.querySelector('#total_show');
+                        total_show.innerHTML = `$ ${price_tatal}`;
+                    });
+                    amount_total();
+                    // price_total();
+                    carttemporary();
+                });
+            });
+        };
+
+        cartlistedit();//訂單編輯動作
+        amount_total();//數量小計
+        price_total();//金額總計
+        carttemporary();//訂購數量暫存
+
+    </script>
+</body>
+
+</html>
