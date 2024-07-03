@@ -208,8 +208,8 @@
                             <div class="col-auto col-md-2 mb-0 p-0">
                                 <button type="button" class="dash_btn btn bi bi-dash-square-fill"
                                     style="font-size: 20px; color:#c1cb5b"></button>
-                                <span class="amount_show"></span>
-                                <button type="button" class="plus_btn btn bi bi-plus-square-fill"
+                                <input type="number"  value='1' min='1' class="amount_show" ></input>
+                                <button type="button"  class="plus_btn btn bi bi-plus-square-fill"
                                     style="font-size: 20px; color:#c1cb5b"></button>
                             </div>
                             <p class="subtotal_show col-auto col-sm-2 mb-0" alt=""></p>
@@ -223,11 +223,12 @@
                         <p class="col text-body-tertiary">總計:</p>
                     </div>
                     <div class="col-6 col-sm-3 text-end px-0">
+                        <p id="amount_total_show" class="col"></p>
                         <p id="total_show" class="col"></p>
                     </div>
                 </div>
                 <div class="row justify-content-center justify-content-sm-between align-items-center mx-0 gap-3">
-                    <a class="col-auto my-card-btn" style="color: #3d513a;" href="./shop-home.html">
+                    <a class="col-auto my-card-btn" style="color: #3d513a;" href="./shop-home-js(新增彈跳視窗).html">
                         <i class="bi bi-arrow-left">
                             <span>返回購物</span></i>
                     </a>
@@ -350,6 +351,38 @@
                 text: '',
                 price: '1480',
             },
+            {
+                id: '0006',
+                img: './img/花毛巾-2.png',
+                brand: 'kaia',
+                name: '純棉花朵毛巾',
+                text: '',
+                price: '280',
+            },
+            {
+                id: '0007',
+                img: './img/枕套多色.jpg',
+                brand: 'kaia',
+                name: '個性格紋枕套',
+                text: '',
+                price: '390',
+            },
+            {
+                id: '0008',
+                img: './img/英字地毯.png',
+                brand: '韓國選品',
+                name: 'Script Letteting腳踏墊',
+                text: '',
+                price: '590',
+            },
+            {
+                id: '0009',
+                img: './img/桌鏡.jpg',
+                brand: '韓國選品',
+                name: '奶油色化妝鏡',
+                text: '',
+                price: '890',
+            },
         ];
         console.log('商品清單', shop_all_products);
 
@@ -365,11 +398,11 @@
         });
         console.log(result);
 
-        // 數量編輯按鈕
-        let plus_btn = document.querySelectorAll('.plus_btn');
-        let dash_btn = document.querySelectorAll('.dash_btn');
-        let amount_show = document.querySelectorAll('.amount_show');
-        let amount = 1;
+        cartlistedit();//訂單編輯動作
+        amount_total();//數量小計
+        price_total();//金額總計
+        carttemporary();//訂購數量暫存
+
 
         let cartlist = document.querySelector('#cartlist');
         result.forEach((item) => {
@@ -384,93 +417,136 @@
                     <div class="product-id col mb-0" alt=""> # ${item.id}</div>
                     <div class="product-price col mb-0" alt="">$${item.price}</div>
                 </div>
-                <div class="col-auto col-md-2 mb-0 p-0">
+                <div class="col-auto mb-0 p-0">
                     <button type="button" class="dash_btn btn bi bi-dash-square-fill"
                                     style="font-size: 20px; color:#c1cb5b"></button>
-                    <span class="amount_show">${amount}</span>
+                    <input type="number" value='1' min="1" class="amount_show" style="width:50px" ></input>
                     <button type="button" class="plus_btn btn bi bi-plus-square-fill"
                                     style="font-size: 20px; color:#c1cb5b"></button>
                 </div>
-                <p class="subtotal_show col-auto col-sm-2 mb-0" alt=""> $${item.price * 1}</p>
+                <p class="subtotal_show col-auto col-sm-2 mb-0" alt="" data-price="${item.price}" > $${item.price * 1}</p>
             </div>
             <hr>
             `;
         });
-        amount_edit();
+        cartlistedit();//訂單編輯動作
+        amount_total();//數量小計
+        price_total();//金額總計
+        carttemporary();//訂購數量暫存
 
-        function amount_edit() {
-            result.forEach((item) => {
-                let amount = 1;
-                console.log(amount);
-                let amount_show = document.querySelectorAll('.amount_show');
-                amount_show.innerHTML += `
-                <span class="amount_show">${amount}</span>
-                `;
+        // function cartlistedit() {
+        //     let plus_btn = document.querySelector('.plus_btn');
+        //     let dash_btn = document.querySelector('.dash_btn');
 
-                let subtotal = item.price;
-                console.log(subtotal * amount);
-                let subtotal_show = document.querySelectorAll('.subtotal_show');
-                subtotal_show.innerHTML += `
-                <p class="subtotal_show col-auto col-sm-2 mb-0" alt=""> $${subtotal}</p>
-                `;
+        //     plus_btn.addEventListener('click', function () {
+        //         let amount_show = document.querySelector('.amount_show');
+        //         amount_show.value = parseInt(amount_show.value) + 1;
+        //         // console.log(amount_show.value);
+        //         amount_show.innerHTML += `
+        //         <span class="amount_show">${amount_show.value}</span>
+        //         `;
+        //         let subtotal_show = document.querySelector('.subtotal_show');
+        //         console.log(amount_show.value * subtotal_show.dataset.price);
+        //         let subtotal = parseInt(amount_show.value)  * subtotal_show.dataset.price;
+        //         subtotal_show.innerHTML = `
+        //         <p class="subtotal_show"> $${subtotal}</p>
+        //         `;
+        //     });
+        //     dash_btn.addEventListener('click', function () {
+        //         let amount_show = document.querySelector('.amount_show');
+        //         amount_show.value = parseInt(amount_show.value) - 1;
+        //         // console.log(amount_show.value);
+        //         amount_show.innerHTML += `
+        //         <span class="amount_show">${amount_show.value}</span>
+        //         `;
+        //         let subtotal_show = document.querySelector('.subtotal_show');
+        //         console.log(amount_show.value * subtotal_show.dataset.price);
+        //         let subtotal = parseInt(amount_show.value)  * subtotal_show.dataset.price;
+        //         subtotal_show.innerHTML = `
+        //         <p class="subtotal_show"> $${subtotal}</p>
+        //         `;
+        //     });
 
-                // 總計
-                // let total_show = document.querySelector('#total_show');
-                // console.log(total_show);
-                // total_show.innerHTML = '';
-                // total_show.innerHTML += `
-                // <p id="total_show"> ${amount}</p>
-                // <p id="total_show"> ${price * amount}</p>`;
-                // let total = price * amount;
-                // console.log('總計', total);
-                // // 總計金額暫存紀錄
-                // localStorage.setItem('總計', total.toString());
-                // console.log('localStorage', localStorage);
-                // console.log(localStorage.getItem('總計'));
-                // let local_total = localStorage.getItem('總計');
-                // console.log('從暫存取得出來的', local_total);
-                // console.log('轉化成陣列', local_total.split(','));
-            });
-            //     // 總計數量暫存紀錄
-            //     localStorage.setItem('數量', amount.toString());
-            //     console.log('localStorage', localStorage);
-            //     console.log(localStorage.getItem('數量'));
-            //     let local_amount = localStorage.getItem('數量');
-            //     console.log('從暫存取得出來的', local_amount);
-            //     console.log('轉化成陣列', local_amount.split(','));
+        // };
 
-
-
-        };
-        cartlistedit()
         function cartlistedit() {
-            let plus_btn = document.querySelectorAll('.plus_btn');
-            let dash_btn = document.querySelectorAll('.dash_btn');
+            let plus_btns = document.querySelectorAll('.plus_btn');
+            let dash_btns = document.querySelectorAll('.dash_btn');
             let amount_show = document.querySelectorAll('.amount_show');
+            let subtotal_show = document.querySelectorAll('.subtotal_show');
 
-            plus_btn.forEach((item, index) => {
+            plus_btns.forEach((item, index) => {
                 item.addEventListener('click', function () {
-                    let amount_num = amount_show[index];
+                    let amounts = amount_show[index];
+                    amounts.value = parseInt(amounts.value) + 1;
 
-                    console.log('有');
-                    console.log(amount_num.value);
-                    amount++;
-                    amount_edit();
+                    let subtotal = subtotal_show[index];
+                    let subtotal_result = parseInt(amounts.value) * subtotal.dataset.price;
+                    subtotal.innerHTML = `
+                    <p class="subtotal_show"> $${subtotal_result}</p>
+                    `;
+                    amount_total();
+                    price_total();
+                    carttemporary();
                 });
+
             });
+
+            dash_btns.forEach((item, index) => {
+                item.addEventListener('click', function () {
+                    let amounts = amount_show[index];
+                    amounts.value = parseInt(amounts.value) - 1;
+
+                    let subtotal = subtotal_show[index];
+                    let subtotal_result = parseInt(amounts.value) * subtotal.dataset.price;
+                    subtotal.innerHTML = `
+                    <p class="subtotal_show"> $${subtotal_result}</p>
+                    `;
+                    amount_total();
+                    price_total();
+                    carttemporary();
+                });
+
+            });
+
+
+
         };
 
 
+        function amount_total() {
+            let amount_show = document.querySelectorAll('.amount_show');
+            amount = 0;
+            amount_show.forEach((item) => {
+                amount = amount + parseInt(item.value);
+                console.log(parseInt(item.value));
+                let amount_total_show = document.querySelector('#amount_total_show')
+                amount_total_show.innerHTML = amount;
+            });
+        };
 
-        // dash_btn.addEventListener('click', function () {
-        //     if (amount <= 1) {
-        //         return;
-        //     } else {
-        //         amount--;
-        //     }
-        //     amount_edit();
-        // });
+        function price_total() {
+            let amount_show = document.querySelectorAll('.amount_show');
+            let subtotal_show = document.querySelectorAll('.subtotal_show');
+            price_tatal = 0;
+            amount_show.forEach((item, index) => {
+                let subtotal = subtotal_show[index];
+                price_tatal = price_tatal + parseInt(item.value) * subtotal.dataset.price;
+                console.log(price_tatal);
+                let total_show = document.querySelector('#total_show');
+                total_show.innerHTML = price_tatal;
+            })
+        };
 
+        function carttemporary() {
+            let amount = [];
+            let amount_show = document.querySelectorAll('.amount_show');
+            amount_show.forEach((item) => {
+                amount.push(parseInt(item.value));
+            });
+            let JSON_shopamount = JSON.stringify(amount);
+            localStorage.setItem("商品數量", JSON_shopamount);
+        };
 
     </script>
 </body>
