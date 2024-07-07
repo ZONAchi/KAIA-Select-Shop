@@ -535,7 +535,7 @@
                 item.addEventListener('click', function () {
                     let amounts = amount_show[index];
                     amounts.value = parseInt(amounts.value) - 1;
-                    if (amounts.value = 1) {
+                    if (amounts.value <= 1) {
                         amounts.value = 1;
                     }
 

@@ -218,6 +218,16 @@
                         </fieldset> -->
                     </div>
                 </div>
+                <div id="payment_show">
+                    <h4 class="card-title">付款</h4>
+                    <div class="payment_text"></div>
+                    <hr>
+                </div>
+                <div id="transport_show">
+                    <h4 class="card-title">運送</h4>
+                    <div class="transport_text"></div>
+                    <hr>
+                </div>
                 <form id="people_show">
                     <fieldset disabled>
                         <div class="my-4">
@@ -445,6 +455,7 @@
         });
         console.log(result);
 
+        // 訂單明細
         let cartlist = document.querySelector('#cartlist');
         result.forEach((item) => {
             console.log(item.name);
@@ -467,6 +478,40 @@
             `;
         });
 
+        // 付款資訊
+        let payment = JSON.parse(localStorage.getItem('payment'));
+        if (payment == 0) {
+            payment = '貨到付款';
+        } else if (payment == 1) {
+            payment = '信用卡付款';
+        } else if (payment == 2) {
+            payment = 'ATM轉帳';
+        }
+        let payment_show = document.querySelector('#payment_show');
+        payment_show.innerHTML = `
+            <div id="payment_show">
+                <h4 class="card-title">付款</h4>
+                <div class="payment_text">付款方式 : ${payment}</div>
+                <hr>
+            </div>
+        `;
+        // 運送資訊
+        let transport = JSON.parse(localStorage.getItem('transport'));
+        console.log('transport', transport);
+        if (transport == 0) {
+            transport = '黑貓宅配';
+        } else if (transport == 1) {
+            transport = '離島宅配';
+        }
+        let transport_show = document.querySelector('#transport_show');
+        transport_show.innerHTML = `
+            <div id="transport_show">
+                <h4 class="card-title">運送</h4>
+                <div class="transport_text"> 運送方式 :  ${transport} </div>
+                <hr>
+            </div>
+        `;
+        // 顧客資料
         let people = JSON.parse(localStorage.getItem('people'));
         console.log(people.buyer_name);
         let people_show = document.querySelector('#people_show');
